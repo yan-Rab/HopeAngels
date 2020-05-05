@@ -1,7 +1,5 @@
 .body-main {
-    display: flex;
-   
-    
+    display: flex; 
 }
 .logo{
     background-color: #003366;
@@ -9,7 +7,7 @@
     justify-content: center;
     align-items: center;
     max-width: 350px;
-    padding: 40px;
+    padding: 60px;
 }
 
 .title{
@@ -21,18 +19,25 @@
     background-color: #006699;
 }
 
-.form{
+.title strong{
+    color: white;
+    font-size: 30px;
+    font-family: cursive;
+    max-width: 300px; 
+    margin-right: 20px;
+}
+
+.body-form{
     
-    
+    background-color: #e4e4e4;
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #e4e4e4;
-   
-    max-width: 250px;
+    max-width: 450px;
     height: 500px;
     padding: 20px;
 }
-.form input {
+.body-form input {
     margin: 20px auto;
     
     width: 250px;
@@ -45,7 +50,7 @@
     
 }
 
-.form button {
+.body-form button {
     margin-top: 10px;
     width: 250px;
     height: 40px;
@@ -58,7 +63,7 @@
     outline: none;
 }
 
-.form button[disabled]{
+.body-form button[disabled]{
     border: solid 2px grey;
     color: grey;
     background:white;
