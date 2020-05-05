@@ -40,7 +40,8 @@
     font-size: 16px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 5px;
-    border: solid 2px grey;
+    border: solid 2px #6699ff;
+    outline: none;
     
 }
 
@@ -50,13 +51,18 @@
     height: 40px;
     border-radius: 5px;
     font-size: 18px;
-    color: #6699ff;
+    color: white;
     border: solid 2px #6699ff;
+    background-color: #6699ff;
     transition: all 0.4s;
+    outline: none;
 }
 
-.form button:hover{
-    background-color: #6699ff;
-    color: white;
+.form button[disabled]{
+    border: solid 2px grey;
+    color: grey;
+    background:white;
 }
+
+
 
