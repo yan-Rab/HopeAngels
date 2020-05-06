@@ -3,5 +3,40 @@
     height: 100px;
     justify-content: space-around;
     align-items: center;
+    
    
+}
+
+.main-header .link-entry{
+    text-decoration: none;
+    display: flex;
+    height: 35px;
+    width: 100px;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    color: #0066cc;
+    font-weight: bold;
+    font-size: 20px;
+    border: solid 1px #0066cc;
+    transition: all 0.4s;
+}
+
+.main-header .cadastro-entry .link-cadastro {
+    text-decoration: none;
+    color: #0066cc;
+    font-size: 18px;
+}
+
+.main-header .cadastro-entry .link-entry:hover{
+    background-color: #0066cc;
+    color: white;
+}
+
+.main-header .cadastro-entry{
+    display: flex;
+    width: 250px;
+    
+    justify-content: space-between;
+    align-items: center;
 }
