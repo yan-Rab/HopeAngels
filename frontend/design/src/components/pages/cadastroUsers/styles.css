@@ -1,37 +1,32 @@
 .body-main {
     display: flex; 
-    background-color: #0099cc;
+    background-color: white;
+    width: 100%;
+    justify-content: center;
     
 }
-.logo{
-    background-color: #003366;
+body{
+    background-color: #eeeeee;
+}
+.body-title {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 350px;
-    padding: 60px;
+    margin-left: 300px;
 }
 
-.title{
-    max-width: 700px;
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #006699;
+.body-title .title {
+    display: block;
+    max-width: 300px;
+    margin-top: 50px;
 }
-
-.title strong{
-    color: white;
-    font-size: 40px;
-    font-family: 'Times New Roman', Times, serif;
-    max-width: 260px; 
-    margin-right: 20px;
+.body-title .title strong {
+    color: #003366;
+    font-size: 25px;
+    margin-top: 50px;
 }
 
 .body-form{
     
-    background-color: #f2f2f2;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +39,7 @@
     margin: 20px auto;
     padding: 4px;
     width: 270px;
-    height: 40px;
+    height: 45px;
     font-size: 16px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 2px;

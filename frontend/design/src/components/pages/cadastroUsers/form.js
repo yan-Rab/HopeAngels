@@ -1,6 +1,7 @@
 import React from 'react';
 import api from '../../../services/api';
 import { Link } from "react-router-dom";
+import logoMarca from "../../../images/logomarca.png";
 export default class Form extends React.Component {
 
     state = {
@@ -44,9 +45,10 @@ export default class Form extends React.Component {
 
         return (
             <div className = 'body-form'>
+            
             <div style = {{margin: "20px 20px 20px 80px"}}>
             <form onSubmit = {this.insertInforsUsers.bind(this)}>
-
+            <img src = {logoMarca} />
             <input type = "text"  onChange = {this.getName.bind(this)} placeholder = " Nome completo"/>
             <input type = "text"  onChange = {this.getEmail.bind(this)} placeholder = " E-mail"/>
             <input type = "password" placeholder = " Crie sua senha" onChange = {this.getCreatePassword.bind(this)} />
