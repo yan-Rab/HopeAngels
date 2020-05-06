@@ -1,9 +1,13 @@
+body{
+    background-color: #f4f4f4;
+}
+
 .body-login{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f4f4f4;
+    background-color: white;
     
 }
 .body-login .logo-form{

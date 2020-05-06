@@ -1,6 +1,6 @@
 .body-main {
     display: flex; 
-    background-color: mediumslateblue;
+    background-color: #0099cc;
     
 }
 .logo{
@@ -31,7 +31,7 @@
 
 .body-form{
     
-    background-color: #d9d9d9;
+    background-color: #f2f2f2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,8 +47,8 @@
     height: 40px;
     font-size: 16px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    border-radius: 5px;
-    border: solid 1px #6699ff;
+    border-radius: 2px;
+    border: solid 1px #000033;
     outline: none;
     
 }
@@ -56,8 +56,8 @@
 .body-form button {
     margin-top: 10px;
     width: 280px;
-    height: 45px;
-    border-radius: 5px;
+    height: 50px;
+    border-radius: 4px;
     font-size: 18px;
     color: white;
     border: solid 2px #6699ff;
@@ -68,14 +68,20 @@
 }
 
 .body-form button[disabled]{
-    border: solid 2px grey;
-    color: grey;
+    border: solid 2px gray;
+    color: gray;
     background:white;
 }
 
 .body-form button:active{
     box-shadow: none;
     margin-top: 11px;
+}
+
+.body-form a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: 600;
 }
 
 

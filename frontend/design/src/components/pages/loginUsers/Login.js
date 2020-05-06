@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import logoMarca from '../../../images/logomarca.png';
 import './styles.css';
+import { Link } from 'react-router-dom'; 
 export default class Login extends Component {
     render(){
         return(
@@ -15,7 +16,7 @@ export default class Login extends Component {
                    
                     <p style ={{marginTop: "15px", fontSize:"18px",marginBottom: "30px"}}>
                     Novo no Anjos da Esperança? 
-                    <a href = "" className = "link-cadastrar">Cadastre-se</a>
+                    <Link to = "/CadastroUsers" className = "link-cadastrar">Cadastre-se</Link>
                     </p>
 
                 </div>

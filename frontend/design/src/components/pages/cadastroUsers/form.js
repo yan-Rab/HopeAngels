@@ -1,5 +1,6 @@
 import React from 'react';
 import api from '../../../services/api';
+import { Link } from "react-router-dom";
 export default class Form extends React.Component {
 
     state = {
@@ -53,10 +54,8 @@ export default class Form extends React.Component {
             
             <button type = "submit" disabled = {createPassword !== confirmPassword || createPassword === "" && confirmPassword === ""} >Cadastrar</button>
             
-            <p style = {{marginTop:"15px"}}>
-            <strong style = {{color: "#003366",fontSize: "20px"}}>
-                Já possui uma Conta? <a href = "">Entre</a>
-            </strong>
+            <p style = {{marginTop:"15px",fontSize: "20px"}}>
+                Já possui uma Conta? <Link to = "/LoginUsers">Entre</Link>
             </p>
 
             </form>
