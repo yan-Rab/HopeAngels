@@ -1,19 +1,15 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-import Form from './form';
-import Logo from './logo';
-import Title from './title';
 import "./styles.css";
-export default class Main extends React.Component {
+export default class Main extends Component {
     render(){
         return(
-            <div className = 'body-main'>
-              
-                <Logo />
-                <Title />
-                <Form />
-
+            <div className = 'main-header'>
+                
+                <div>
+                    <p>Cadastre-se agora</p>
+                </div>
             </div>
-        );
+        )
     }
 }

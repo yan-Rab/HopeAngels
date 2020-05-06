@@ -1,73 +1,7 @@
-.body-main {
-    display: flex; 
-}
-.logo{
-    background-color: #003366;
+.main-header{
     display: flex;
-    justify-content: center;
+    height: 100px;
+    justify-content: space-around;
     align-items: center;
-    max-width: 350px;
-    padding: 60px;
+   
 }
-
-.title{
-    max-width: 700px;
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #006699;
-}
-
-.title strong{
-    color: white;
-    font-size: 30px;
-    font-family: cursive;
-    max-width: 300px; 
-    margin-right: 20px;
-}
-
-.body-form{
-    
-    background-color: #e4e4e4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 450px;
-    height: 500px;
-    padding: 20px;
-}
-.body-form input {
-    margin: 20px auto;
-    
-    width: 250px;
-    height: 35px;
-    font-size: 16px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    border-radius: 5px;
-    border: solid 2px #6699ff;
-    outline: none;
-    
-}
-
-.body-form button {
-    margin-top: 10px;
-    width: 250px;
-    height: 40px;
-    border-radius: 5px;
-    font-size: 18px;
-    color: white;
-    border: solid 2px #6699ff;
-    background-color: #6699ff;
-    transition: all 0.4s;
-    outline: none;
-}
-
-.body-form button[disabled]{
-    border: solid 2px grey;
-    color: grey;
-    background:white;
-}
-
-
-

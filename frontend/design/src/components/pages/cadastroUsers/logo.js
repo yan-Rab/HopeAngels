@@ -3,7 +3,7 @@ import logo from '../../../images/background-main.jpg';
 
 const Logo = () => (
     <div className = 'logo'>
-            <img src = {logo} style = {{width: "250px", height: "250px",borderRadius: "8px"}}/>
+            <img src = {logo} style = {{minWidth: "250px", minHeight: "250px",borderRadius: "8px",maxWidth: "400px",maxHeight: "400px"}}/>
     </div>
 )
 

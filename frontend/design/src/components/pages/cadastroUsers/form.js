@@ -7,6 +7,7 @@ export default class Form extends React.Component {
         email: "",
         createPassword: "-",
         confirmPassword: "",
+        message: "teste",
     }
 
     getName = (event) => {
@@ -30,8 +31,9 @@ export default class Form extends React.Component {
             email: this.state.email,
             password: this.state.confirmPassword,
         });
-    
     }
+
+
 
     
 
@@ -51,6 +53,12 @@ export default class Form extends React.Component {
             
             <button type = "submit" disabled = {createPassword !== confirmPassword || createPassword === "" && confirmPassword === ""} >Cadastrar</button>
             
+            <p style = {{marginTop:"15px"}}>
+            <strong style = {{color: "#003366",fontSize: "20px"}}>
+                Já possui uma Conta? <a href = "">Entre</a>
+            </strong>
+            </p>
+
             </form>
             </div>
             </div>

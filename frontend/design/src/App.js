@@ -1,10 +1,11 @@
 import React from 'react';
-import Main from './components/pages/main/Main';
+import Routes from './routes';
 import './styles.css';
+import { Route } from 'react-router-dom';
 const App = () => (
 
     <div>
-      <Main />
+     <Routes />
     </div>
 )
 
