@@ -4,6 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 const Contato = () => (
     <div className = "body-contato">
+        
         <FcCallback style = {{width: "30px", height:"30px"}} />
         <strong style = {{fontSize:"22px",color:"#003366",marginLeft:"10px"}}>Telefone</strong>
         <p style = {{marginTop:"5px",fontSize:"20px"}}>(12) 2127-3030</p>

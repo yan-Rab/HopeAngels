@@ -9,6 +9,8 @@ mongoose.connect("mongodb://localhost:27017/systemRating", {useNewUrlParser: tru
 
 require('./src/models/Users');
 require('./src/models/Categories');
+require('./src/models/Ongs');
+require('./src/models/Cases');
 
 app.use('/api',require('./src/routes'));
 
