@@ -5,7 +5,9 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(cors());
-mongoose.connect("mongodb://localhost:27017/systemRating", {useNewUrlParser: true});
+
+mongoose.connect("mongodb://localhost/systemRating", {useNewUrlParser: true});
+
 
 require('./src/models/Users');
 require('./src/models/Categories');

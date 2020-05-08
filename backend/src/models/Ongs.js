@@ -20,16 +20,19 @@ const OngsSchema = new mongoose.Schema({
     email : {
         type: String,
         required: true,
+        unique: true,
     },
 
     password: {
         type: String,
         required: true,
+        select: false,
     },
 
     cnpj : {
         type: Number,
         required: true,
+        unique: true,
     },
 
     createdAt : {
@@ -38,5 +41,10 @@ const OngsSchema = new mongoose.Schema({
     },
 })
 
+OngsSchema.pre('save', async function(next){
+    const hash = await bcrypt.hash(this.password, 10);
+    this.password = hash;
+    next();
+})
 OngsSchema.plugin(mongoosePaginate);
 mongoose.model("Ongs", OngsSchema);
