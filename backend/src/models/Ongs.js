@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const mongoosePaginate = require("mongoose-paginate");
-
+const bcrypt = require('bcryptjs');
 const OngsSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -30,7 +30,7 @@ const OngsSchema = new mongoose.Schema({
     },
 
     cnpj : {
-        type: Number,
+        type: String,
         required: true,
         unique: true,
     },

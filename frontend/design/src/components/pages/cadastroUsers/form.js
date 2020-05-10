@@ -48,7 +48,7 @@ export default class Form extends React.Component {
             
             <div style = {{margin: "20px 20px 20px 80px"}}>
             <form onSubmit = {this.insertInforsUsers.bind(this)}>
-            <img src = {logoMarca} />
+            <img src = {logoMarca}></img>
             <input type = "text"  onChange = {this.getName.bind(this)} placeholder = " Nome completo"/>
             <input type = "text"  onChange = {this.getEmail.bind(this)} placeholder = " E-mail"/>
             <input type = "password" placeholder = " Crie sua senha" onChange = {this.getCreatePassword.bind(this)} />

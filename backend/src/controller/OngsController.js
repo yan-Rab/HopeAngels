@@ -1,6 +1,15 @@
 const mongoose = require("mongoose");
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const authHash = require('../auth/auth.json');
+
 const Ongs = mongoose.model("Ongs");
+
+function generateToken(params = {}){
+    return jwt.sign(params,authHash.secret,{
+        expiresIn: 86400,
+    });
+}
 
 module.exports = {
     async searchOngs(request,response){
@@ -10,18 +19,21 @@ module.exports = {
 
     async createOngs(request,response){
         const { email } = request.body;
-
         try{
-            if(await Ongs.findOne({email})){
-                return response.status(400).send("this email already exists!");
-            }
-        
-            const ongs = await Ongs.create(request.body);
-            return response.json(ongs);
+
+        if(await Ongs.findOne({email})){
+            return response.status(400).send("Ong already exists!");
+        }
+
+        const ongs = await Ongs.create(request.body);
+        ongs.password = undefined;
+
+        return response.json({ongs, token: generateToken({id: ongs.id})});
 
         }catch(error){
             return response.status(400).send("Register failed!");
         }
+
     },
 
     async destroyOngs(request,response){
@@ -31,19 +43,20 @@ module.exports = {
 
     async authenticationOngs(request,response){
         const { email, password } = request.body;
-        const ongs = await findOne({ email }).select('+password');
-        
+
+        const ongs = await Ongs.findOne({email}).select("+password");
+
         if(!ongs){
-            return response.status(400).send("Ong not found");
+            return response.status(400).send("Ong not found!");
         }
 
         if(!await bcrypt.compare(password, ongs.password)){
-            return response.status(400).send("Invalid Password!");
+            return response.status(400).send("Invalid password!");
         }
 
         ongs.password = undefined;
 
-        return response.json(ongs);
+        return response.json({ongs,token: generateToken({id: ongs.id})});
 
     }
     

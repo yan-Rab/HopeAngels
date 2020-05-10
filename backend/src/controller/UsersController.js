@@ -1,6 +1,15 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const authHash = require('../auth/auth.json');
 const Users = mongoose.model("Users");
+
+function generateToken(params = {}){
+    return jwt.sign(params, authHash.secret, {
+        expiresIn: 86400,
+});
+
+}
 
 module.exports = {
 
@@ -20,7 +29,7 @@ module.exports = {
         const users = await Users.create(request.body);
         users.password = undefined;
 
-        return response.json(users);
+        return response.json({users, token: generateToken({id: users.id})});
 
        }catch(error){
            response.status(400).send({error: "Register of User failed!"});
@@ -41,7 +50,14 @@ module.exports = {
             return response.status(400).send("Invalid Password!");
         }
         users.password = undefined;
-        return response.json(users);
+
+        
+
+         return response.json({
+            users, 
+            token: generateToken({id: users.id})
+        });
+          
     }
    
 
