@@ -43,11 +43,11 @@ module.exports = {
         const users = await Users.findOne({email}).select('+password');
 
         if(!users){
-            return response.status(400).send("User not found");
+            return response.status(400).send({error: "User not found"});
         }
 
         if(!await bcrypt.compare(password, users.password)){
-            return response.status(400).send("Invalid Password!");
+            return response.status(400).send({error:"Invalid Password!"});
         }
         users.password = undefined;
 
