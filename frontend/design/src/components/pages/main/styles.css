@@ -1,12 +1,14 @@
 .main-header{
     display: flex;
     height: 100px;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     
    
 }
 .main-header .cadastro-entry{
+    margin-right: 10%;
+    margin-left: 20px;
     display: flex;
     width: 270px;
     justify-content: space-between;
@@ -43,8 +45,12 @@
     display: flex;
     height: 450px;
     margin-top: 40px;
-    justify-content:space-around;
+    justify-content:space-between;
     background-color: #fafafa;
+}
+.body-infors .about-we {
+    margin-right: 100px;
+    margin-left: 15px;
 }
 
 .body-infors .about-we h1{
@@ -57,4 +63,5 @@
 
 .body-infors .body-contato {
     margin-top: 30px;
+    
 }
