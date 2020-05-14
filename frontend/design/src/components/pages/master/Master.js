@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Logout from './Logout';
+import Header from './Header';
 import Cases from './cases/Cases';
 import "./styles.css";
 export default class Master extends Component {
@@ -8,7 +8,7 @@ export default class Master extends Component {
         
         return(
             <div>
-                <Logout />
+                <Header />
                 <div className = "body-Case">
                 <Cases />
                 </div>
