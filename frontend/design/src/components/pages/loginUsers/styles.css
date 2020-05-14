@@ -39,6 +39,7 @@ body{
 .body-login .logo-form .form-login .link-entrar {
     text-decoration: none;
     display: flex;
+    width: 360px;
     height: 55px;
     justify-content: center;
     align-items: center;

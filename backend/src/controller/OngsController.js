@@ -14,7 +14,7 @@ function generateToken(params = {}){
 module.exports = {
     async searchOngs(request,response){
         const ongs = await Ongs.paginate();
-        return response.json(ongs);
+        return response.json({ongs, user: request.userId});
     },
 
     async createOngs(request,response){

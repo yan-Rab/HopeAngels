@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
-
-
+import Logout from './Logout';
+import Cases from './cases/Cases';
+import "./styles.css";
 export default class Master extends Component {
-
-    logout = () => {
-        localStorage.removeItem("authenticationUsers");
-        window.location.reload();
-    }
 
     render(){
         
         return(
             <div>
-                Hello User {localStorage.getItem("authenticationUsers")}
-                <button onClick = {this.logout.bind(this)} style = {{backgroundColor: "blue"}}>Deslogar</button>
+                <Logout />
+                <div className = "body-Case">
+                <Cases />
+                </div>
+                
             </div>
         )
     }

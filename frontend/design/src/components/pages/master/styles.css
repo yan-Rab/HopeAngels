@@ -1,0 +1,22 @@
+
+.logout-but{
+    width: 120px ;
+    height: 40px;
+    color: #0066cc;
+    font-weight: bold;
+    border: solid 2px #0066cc;
+    border-radius: 2px;
+    transition: all 0.4s;
+}
+
+.logout-but:hover{
+    background-color: #0066cc;
+    color: white;
+}
+
+.body-Case{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}

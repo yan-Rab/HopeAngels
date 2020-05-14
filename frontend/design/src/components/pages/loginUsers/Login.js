@@ -7,10 +7,10 @@ import api from '../../../services/api';
 export default class Login extends Component {
 
     state = {
+
         email: "",
         password: "",
-        msg: "",
-        
+    
     }
 
     getEmail = (event) => (
@@ -26,11 +26,14 @@ export default class Login extends Component {
         const { email } = this.state;
         const { password } = this.state;
         const response = await api.post(`/authenticationUsers`, { email: email, password: password });
-        
+        const { _id } = response.data.users;
+        const { token } = response.data;
         if(response){
-            localStorage.setItem("authenticationUsers", response.data.token);
+            localStorage.setItem("authenticationUsers", token);
+            localStorage.setItem("userId", _id);
+
             window.location.reload();
-            return localStorage.getItem("authenticationUsers");
+           
         }
         
     }
@@ -44,13 +47,13 @@ export default class Login extends Component {
                 <div className = "form-login">
                     <input type = "text" onChange = {this.getEmail.bind(this)} placeholder = "E-mail" />
                     <input type = "password"  onChange = {this.getPassword.bind(this)} placeholder = "Senha"/>
-                    <Link onClick = {this.authUsers.bind(this)} to = "/AnjosDaEsperança"  className = "link-entrar">Entrar</Link>
+                    <button onClick = {this.authUsers.bind(this)} className = "link-entrar">Entrar</button>
 
                     <p style ={{marginTop: "15px", fontSize:"18px",marginBottom: "30px"}}>
                     Novo no Anjos da Esperança? 
                     <Link to = "/CadastroUsers" className = "link-cadastrar">Cadastre-se</Link>
                     </p>
-                    <h2>{this.state.msg}</h2>
+                    
                 </div>
                 
                 </div>

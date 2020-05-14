@@ -63,9 +63,9 @@ body{
 }
 
 .body-form button[disabled]{
-    border: solid 2px gray;
-    color: gray;
-    background:white;
+    border: solid 3px #e7e7e7;
+    color:#b7b7b7;
+    background:#eeeeee;
 }
 
 .body-form button:active{

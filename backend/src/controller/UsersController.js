@@ -23,7 +23,7 @@ module.exports = {
         try{
 
         if(await Users.findOne({email})){
-            return response.status(400).send({error: "User Already Exists!"});
+            return response.status(400).json({error: "User Already Exists!"});
         }
 
         const users = await Users.create(request.body);
@@ -32,7 +32,7 @@ module.exports = {
         return response.json({users, token: generateToken({id: users.id})});
 
        }catch(error){
-           response.status(400).send({error: "Register of User failed!"});
+           response.status(400).json({error: "Register of User failed!"});
         }
 
     },
@@ -43,22 +43,18 @@ module.exports = {
         const users = await Users.findOne({email}).select('+password');
 
         if(!users){
-            return response.status(400).send({error: "User not found"});
+            return response.status(400).json({error: "User not found"});
         }
 
         if(!await bcrypt.compare(password, users.password)){
-            return response.status(400).send({error:"Invalid Password!"});
+            return response.status(400).json({error:"Invalid Password!"});
         }
         users.password = undefined;
 
-        
-
-         return response.json({
+        return response.json({
             users, 
-            token: generateToken({id: users.id})
-        });
-          
+            token: generateToken({id: users.id}),
+        });   
     }
-   
 
 }

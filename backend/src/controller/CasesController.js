@@ -5,7 +5,7 @@ const Cases = mongoose.model("Cases");
 module.exports = {
     async searchCases(request,response){
         const { page = 1 } = request.query; 
-        const cases = await Cases.paginate({},{page,limit: 4});
+        const cases = await Cases.paginate({},{page,limit: 6});
         return response.json(cases);
     },
 

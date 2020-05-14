@@ -1,4 +1,4 @@
-import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import React from 'react';
 
 import Cadastro from "./components/pages/cadastroUsers/Cadastro";

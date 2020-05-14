@@ -9,7 +9,7 @@ export default class Form extends React.Component {
         email: "",
         createPassword: "-",
         confirmPassword: "",
-        message: "teste",
+        
     }
 
     getName = (event) => {
@@ -28,20 +28,32 @@ export default class Form extends React.Component {
 
     insertInforsUsers = async(event) => {
         event.preventDefault();
-        const response = await api.post('/createUsers', {
+         await api.post('/createUsers', {
             name: this.state.name,
             email: this.state.email,
             password: this.state.confirmPassword,
         });
     }
 
+    disabledButton = () => {
+        const { name } = this.state;
+        const { email } = this.state;
+        const { createPassword } = this.state;
+        const { confirmPassword } = this.state;
 
-
+        if(name !== "" && email !== "" && createPassword !== "" && confirmPassword !== ""){
+            if(createPassword === confirmPassword){
+                return false;
+            }else{
+                return true;
+            }
+        }
+        else{
+            return true;
+        }
+    }
     
-
     render(){
-        const {createPassword} = this.state;
-        const {confirmPassword} = this.state;
 
         return (
             <div className = 'body-form'>
@@ -54,7 +66,7 @@ export default class Form extends React.Component {
             <input type = "password" placeholder = " Crie sua senha" onChange = {this.getCreatePassword.bind(this)} />
             <input type = "password" placeholder = " Confirme sua senha" onChange = {this.getConfirmPassword.bind(this)}/>
             
-            <button type = "submit" disabled = {createPassword !== confirmPassword || createPassword === "" && confirmPassword === ""} >Cadastrar</button>
+        <button type = "submit" disabled = {this.disabledButton()} >Cadastrar</button>
             
             <p style = {{marginTop:"15px",fontSize: "20px"}}>
                 Já possui uma Conta? <Link to = "/LoginUsers">Entre</Link>
