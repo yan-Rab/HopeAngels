@@ -21,6 +21,7 @@ routes.delete('/destroyOngs/:id', OngsController.destroyOngs);
 routes.post('/authenticationOngs',OngsController.authenticationOngs);
 
 routes.get('/searchCases', CasesController.searchCases);
+routes.post('/searchCasesById', CasesController.searchCasesById);
 routes.post('/createCases', CasesController.createCases);
 routes.delete('/destroyCases/:id', CasesController.destroyCases);
 

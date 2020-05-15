@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import "./styles.css"
+
 export default class OngsComponent extends Component {
     render(){
         const {data} = this.props;
+        
         return(
            
             <div className = "OngComponent">
@@ -12,9 +15,9 @@ export default class OngsComponent extends Component {
                 <p>{data.description}</p>
                 <p><strong>E-mail </strong></p>
                 <p>{data.email}</p>
-                <p>{data.category}</p>
+                <p><strong>CNPJ</strong></p>
                 <p>{data.cnpj}</p>
-                <button className = "style-button">Doar</button>
+                <Link to = {`/router-app-cases/${data._id}`} className ="link-conhecer">Conhecer</Link>
             </div>
            
         )

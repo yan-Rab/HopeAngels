@@ -16,7 +16,30 @@
     border-radius: 8px;
     box-shadow: 1px 2px 2px #d3d3d3;
     line-height: 35px;
-    transition: all 0.8s;
+}
+
+
+
+.link-conhecer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    height: 55px;
+    background-color: #fbfbfb ;
+    color: #0066cc;
+    font-weight: bold;
+    margin-top: 25px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.4s;
+    border: solid 1px #0066cc;
+}
+
+.link-conhecer:hover{
+    background-color: #0066cc;
+    color: white;
 }
 
 .OngComponent strong {

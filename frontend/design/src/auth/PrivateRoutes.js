@@ -7,7 +7,7 @@ export const PrivateRouteMaster = ({component: Component, ...rest}) => (
         authUsers() ? (
             <Component {...props} />
         ) : (
-            <Redirect to = {{pathname: "/LoginUsers" , state: { from: props.location } }} />
+            <Redirect to = {{pathname: "/" , state: { from: props.location } }} />
         )
     )} />
 );
@@ -15,7 +15,7 @@ export const PrivateRouteMaster = ({component: Component, ...rest}) => (
 export const PrivateRouteLogin = ({component: Component, ...rest}) => (
     <Route {...rest} render = {props => (
         authUsers() ? (
-            <Redirect to = {{pathname: "/AnjosDaEsperança", state: { from: props.location}}} />
+            <Redirect to = {{pathname: "/router-app-ongs", state: { from: props.location}}} />
         ) : (
             <Component {...props} />
         )

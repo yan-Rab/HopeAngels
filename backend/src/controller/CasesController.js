@@ -9,6 +9,13 @@ module.exports = {
         return response.json(cases);
     },
 
+    async searchCasesById(request, response){
+        const { page = 1} = request.body;
+        const { ong } = request.body;
+        const cases = await Cases.paginate({ong: ong}, {page,limit: 6});
+        return response.json(cases);
+    },
+
     async createCases(request,response){
         const cases = await Cases.create(request.body);
         return response.json(cases);

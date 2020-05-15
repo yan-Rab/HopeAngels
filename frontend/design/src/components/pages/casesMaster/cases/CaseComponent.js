@@ -3,8 +3,6 @@ import React, {Component} from 'react';
 
 export default class CaseComponent extends Component {
 
-
-
     render(){
 
         const {data} = this.props;

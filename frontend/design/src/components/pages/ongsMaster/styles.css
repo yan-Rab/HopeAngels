@@ -15,27 +15,30 @@ header .componentButtons {
 
 header .componentButtons .butcadOng{
 width: 220px;
+text-decoration: none;
 margin-right: 20px;
 height: 50px;
 display: flex;
 justify-content: center;
 align-items: center;
 background-color: #f7f7f7;
-color: #00ccff;
+color: #0099ff;
 font-weight: bold;
-border: solid 2px #00ccff;
+border: solid 2px #0099ff;
 border-radius: 4px;
 font-size: 18px;
+font-family: Arial, Helvetica, sans-serif;
 transition: all 0.5s;
 }
 
 header .componentButtons .butcadOng:hover {
-    background-color: #00ccff;
+    background-color: #0099ff;
     color: white;
 }
 
 .body-Ongs{
     display: flex;
+    margin-top: 20px;
     width: 100%;
     justify-content: center;
     align-items: center;

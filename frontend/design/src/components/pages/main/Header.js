@@ -1,7 +1,7 @@
 import React from 'react';
 import logoMarca from '../../../images/logomarca.png';
 import { Link } from 'react-router-dom';
-import Logout from '../casesMaster/Logout';
+
 const Header = () => (
     <header className = 'main-header'>
         <img src = {logoMarca} style = {{marginTop: "10px",marginLeft: "10%"}}></img>

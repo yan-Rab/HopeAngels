@@ -1,15 +1,16 @@
 .body-Case .Cases{
     display: flex;
-    max-width: 1150px;
+    margin-top: 40px;
+    max-width: 1050px;
     align-items: center;
     flex-wrap: wrap;
 }
 
 .body-Case .Cases .CaseComponent{
     margin: 10px 10px 10px 10px;
-    width: 500px;
-    max-height: 650px;
-    min-height: 300px;
+    max-width: 500px;
+    
+  
     background-color: white;
     padding: 15px;
     border: solid 1px #d3d3d3;

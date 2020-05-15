@@ -7,7 +7,7 @@ export default class Ongs extends Component {
         ongsInfors: [],
     }
 
-    componentWillMount(){
+    componentDidMount(){
         this.loadOngs();
     }
 

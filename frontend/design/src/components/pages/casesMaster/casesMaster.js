@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Cases from './cases/Cases';
 import "./styles.css";
-export default class Master extends Component {
+export default class casesMaster extends Component {
 
     render(){
         
@@ -10,7 +10,7 @@ export default class Master extends Component {
             <div>
                 <Header />
                 <div className = "body-Case">
-                <Cases />
+                <Cases idOng = {this.props.match.params} />
                 </div>
                 
             </div>
