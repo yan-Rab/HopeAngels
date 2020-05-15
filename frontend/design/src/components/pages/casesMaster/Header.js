@@ -5,7 +5,7 @@ import './styles.css';
 export default class Header extends Component {
     render(){
         return(
-            <header>
+            <header className = "header-Cases">
                 <img src = {logoMarca} />
                 <Logout />
             </header>

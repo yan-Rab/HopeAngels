@@ -1,0 +1,32 @@
+.Ongs{
+    display: flex;
+    max-width: 1350px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.OngComponent{
+    margin: 10px 10px 10px 10px;
+    max-width: 650px;
+    max-height: 650px;
+    min-height: 300px;
+    background-color: white;
+    padding: 15px;
+    border: solid 1px #d3d3d3;
+    border-radius: 8px;
+    box-shadow: 1px 2px 2px #d3d3d3;
+    line-height: 35px;
+    transition: all 0.8s;
+}
+
+.OngComponent strong {
+    font-size: 20px;
+    color: #003366;
+    font-family: cursive;
+}
+
+.OngComponent p {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: space-between;
+}

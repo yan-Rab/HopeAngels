@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FcEmptyTrash} from 'react-icons/fc'
+
 
 export default class CaseComponent extends Component {
 
@@ -8,8 +8,6 @@ export default class CaseComponent extends Component {
     render(){
 
         const {data} = this.props;
-        const icon = {width:"28px", height:"28px"};
-
         return(
             <div className = "CaseComponent" >
                 <p><strong>Caso </strong></p>
@@ -17,7 +15,7 @@ export default class CaseComponent extends Component {
                 <p><strong>Detalhes</strong></p>
                 <p>{data.description}</p>
                 <p><strong>Valor </strong></p>
-                <p>{data.value}</p>
+                <p>R$ {data.value}</p>
                 
                 <button className = "style-button">Doar</button>
                 

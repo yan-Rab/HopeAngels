@@ -15,7 +15,7 @@ routes.post('/authenticationUsers',UsersController.authenticationUsers);
 routes.get('/searchCategories',CategoriesController.searchCategories);
 routes.post('/createCategories',CategoriesController.createCategories);
 
-routes.get('/searchOngs', authMiddleware ,OngsController.searchOngs);
+routes.get('/searchOngs', OngsController.searchOngs);
 routes.post('/createOngs', OngsController.createOngs);
 routes.delete('/destroyOngs/:id', OngsController.destroyOngs);
 routes.post('/authenticationOngs',OngsController.authenticationOngs);
