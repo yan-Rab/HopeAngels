@@ -6,7 +6,7 @@ export default class Header extends Component {
     render(){
         return(
             <header className = "header-Cases">
-                <img src = {logoMarca} />
+                <img src = {logoMarca} style = {{width:"220px",height:"140px"}} />
                 <Logout />
             </header>
         )

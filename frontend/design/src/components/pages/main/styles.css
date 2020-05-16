@@ -1,8 +1,7 @@
 .main-header{
     display: flex;
-    height: 100px;
     justify-content: space-between;
-    align-items: center;
+    height: 130px;
 }
 
 .main-header .cadastro-entry{

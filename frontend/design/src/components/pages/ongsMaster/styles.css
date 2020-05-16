@@ -37,8 +37,9 @@ header .componentButtons .butcadOng:hover {
 }
 
 .body-Ongs{
+    
     display: flex;
-    margin-top: 20px;
+    margin-top: 40px;
     width: 100%;
     justify-content: center;
     align-items: center;

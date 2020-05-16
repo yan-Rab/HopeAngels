@@ -42,7 +42,7 @@ export default class Login extends Component {
         return(
             <div className = "body-login">
                 <div className = "logo-form">
-                <img src = {logoMarca}></img>
+                <img src = {logoMarca} style = {{width:"280px",height:"190px"}}></img>
 
                 <div className = "form-login">
                     <input type = "text" onChange = {this.getEmail.bind(this)} placeholder = "E-mail" />
