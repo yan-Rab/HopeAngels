@@ -12,15 +12,15 @@ routes.get('/searchUsers', UsersController.searchUsers,);
 routes.post('/createUsers',UsersController.createUsers);
 routes.post('/authenticationUsers',UsersController.authenticationUsers);
 
-routes.get('/searchCategories',CategoriesController.searchCategories);
+routes.get('/searchCategories',authMiddleware,CategoriesController.searchCategories);
 routes.post('/createCategories',CategoriesController.createCategories);
 
-routes.get('/searchOngs', OngsController.searchOngs);
-routes.post('/createOngs', OngsController.createOngs);
+routes.get('/searchOngs',authMiddleware, OngsController.searchOngs);
+routes.post('/createOngs',authMiddleware, OngsController.createOngs);
 routes.delete('/destroyOngs/:id', OngsController.destroyOngs);
 routes.post('/authenticationOngs',OngsController.authenticationOngs);
 
-routes.get('/searchCases', CasesController.searchCases);
+routes.get('/searchCases', authMiddleware, CasesController.searchCases);
 routes.post('/searchCasesById', CasesController.searchCasesById);
 routes.post('/createCases', CasesController.createCases);
 routes.delete('/destroyCases/:id', CasesController.destroyCases);

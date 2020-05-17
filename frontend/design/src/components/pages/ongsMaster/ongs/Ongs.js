@@ -12,7 +12,9 @@ export default class Ongs extends Component {
     }
 
     loadOngs = async() => {
-        const response = await api.get("/searchOngs");
+        const token = localStorage.getItem("authenticationUsers");
+        console.log(token);
+        const response = await api.get("/searchOngs", {token});
         const { docs } = response.data.ongs;
         this.setState({ongsInfors: docs});
         

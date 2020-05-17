@@ -1,15 +1,13 @@
 .Ongs{
     display: flex;
-    max-width: 1350px;
+    width: 60%;
     align-items: center;
     flex-wrap: wrap;
 }
 
 .OngComponent{
-    margin: 10px 10px 10px 10px;
-    max-width: 650px;
-    max-height: 650px;
-    min-height: 300px;
+    margin: 10px 20px 20px 10px;
+    min-width: 450px; 
     background-color: white;
     padding: 15px;
     border: solid 1px #d3d3d3;
@@ -17,8 +15,6 @@
     box-shadow: 1px 2px 2px #d3d3d3;
     line-height: 35px;
 }
-
-
 
 .link-conhecer{
     display: flex;

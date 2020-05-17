@@ -19,19 +19,31 @@
     margin-bottom: 20px;
 }
 
-.body-form-ongs{
+.body-form-ongs form{
     display: flex;
     max-width: 700px;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-  
+    margin-right: 20px;
     
 }
 
-.body-form-ongs input {
+.body-form-ongs .style-inputs {
     width: 300px;
     height: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 20px;
+    border: 1px solid  #003366;
+    outline: none;
+    border-radius: 2px;
+}
+
+.body-form-ongs select {
+    width: 300px;
+    height: 57px;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 5px;
@@ -46,19 +58,24 @@
     width: 93%;
     height: 60px;
     border: 2px solid #0099ff;
+    background-color: #0099ff ;
     border-radius: 4px;
     padding: 5px;
     justify-content: center;
     align-items: center;
     margin-top: 15px;
     font-size: 20px;
-    color: #0099ff ;
+    color: white ;
     transition: all 0.6s;
-    background-color: white;
+    
 }
 
-.body-form-ongs .but-register:hover{
-    background-color: #0099ff;
-    color: white;
+
+
+.body-form-ongs button[disabled]{
+    background-color: white;
+    border: solid #d1d1d1 2px;
+    
+    color: grey;
 }
 
