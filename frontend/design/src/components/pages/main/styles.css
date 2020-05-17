@@ -1,7 +1,10 @@
 .main-header{
     display: flex;
     justify-content: space-between;
-    height: 130px;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 120px;
+
 }
 
 .main-header .cadastro-entry{
@@ -42,12 +45,14 @@
 .body-infors {
     display: flex;
     margin-top: 40px;
+    flex-wrap: wrap;
     justify-content:space-between;
     background-color: #fafafa;
     padding: 20px;
 }
 
 .body-infors .about-we {
+    max-width: 550px;
     margin-right: 100px;
     margin-left: 15px;
 }

@@ -6,8 +6,13 @@ import Main from "./components/pages/main/Main";
 import Login from './components/pages/loginUsers/Login';
 import CasesMaster from './components/pages/casesMaster/casesMaster';
 import OngsMaster from './components/pages/ongsMaster/OngsMaster';
-import { PrivateRouteMaster, PrivateRouteLogin } from './auth/PrivateRoutes';
+
+import { PrivateRouteMaster, PrivateRouteLogin, 
+         PrivateRouteMasterCases, PrivateRouteRegisterOngs 
+        } from './auth/PrivateRoutes';
+
 import RegisterOngs from './components/pages/registerOngs/RegisterOngs';
+
 const Routes = () => (
     <BrowserRouter>
         <Switch>
@@ -15,8 +20,8 @@ const Routes = () => (
             <Route exact path = "/CadastroUsers" component = {CadastroUsers}/>
             <PrivateRouteLogin exact path = "/LoginUsers" component = {Login} />
             <PrivateRouteMaster exact path = "/router-app-ongs" component = {OngsMaster} />
-            <Route path = "/router-app-cases/:id" component = {CasesMaster} />
-            <Route path = "/registerOngs" component = {RegisterOngs} />
+            <PrivateRouteMasterCases path = "/router-app-cases/:id" component = {CasesMaster} />
+            <PrivateRouteRegisterOngs path = "/registerOngs" component = {RegisterOngs} />
         </Switch>
     </BrowserRouter>
 )

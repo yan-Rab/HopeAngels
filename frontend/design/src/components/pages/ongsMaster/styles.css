@@ -1,22 +1,25 @@
-header{
+.header-ongs{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 120px;
+    flex-wrap: wrap;
 }
 
-header .componentButtons {
+.header-ongs .componentButtons {
     display: flex;
     margin-right: 20%;
     justify-content: space-evenly;
-    width: 460px;
+    flex-wrap: wrap;
+    max-width: 500px;
     margin-left: 20px;
+    margin-top: 20px;
 }
 
-header .componentButtons .butcadOng{
+.header-ongs .componentButtons .butcadOng{
 width: 220px;
+margin-bottom: 20px;
 text-decoration: none;
-margin-right: 20px;
+margin-right: 30px;
 height: 50px;
 display: flex;
 justify-content: center;
@@ -31,7 +34,7 @@ font-family: Arial, Helvetica, sans-serif;
 transition: all 0.5s;
 }
 
-header .componentButtons .butcadOng:hover {
+.header-ongs .componentButtons .butcadOng:hover {
     background-color: #0099ff;
     color: white;
 }
