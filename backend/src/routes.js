@@ -22,7 +22,7 @@ routes.post('/authenticationOngs',OngsController.authenticationOngs);
 
 routes.get('/searchCases', authMiddleware, CasesController.searchCases);
 routes.post('/searchCasesById', CasesController.searchCasesById);
-routes.post('/createCases', CasesController.createCases);
+routes.post('/createCases',authMiddleware, CasesController.createCases);
 routes.delete('/destroyCases/:id', CasesController.destroyCases);
 
 module.exports = routes;

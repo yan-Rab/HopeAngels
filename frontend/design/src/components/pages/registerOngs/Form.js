@@ -13,6 +13,7 @@ export default class Form extends Component {
         confirmePassword: "",
 
         categories: [],
+        messageError: "",
     }
 
      componentDidMount(){
@@ -59,7 +60,7 @@ export default class Form extends Component {
         const {password} = this.state;
         const {confirmePassword} = this.state;
 
-        if(title !== "" && description !== "" && category !== "" && email !== "" &&
+        if(title !== "" && description !== "" && category !== "Atuação" && email !== "" &&
            cnpj !== "" && password !== "" && confirmePassword !== ""){
                if(password === confirmePassword && cnpj.length === 11){
                    return false
@@ -79,6 +80,7 @@ export default class Form extends Component {
         const {email} = this.state;
         const {cnpj} = this.state;
         const {password} = this.state;
+        try{
 
         await api.post("/createOngs", {
             title,
@@ -88,6 +90,12 @@ export default class Form extends Component {
             password,
             cnpj
         });
+
+        }catch(error){
+            this.setState({messageError: "Houve um erro ao registrar sua Ong!"})
+            
+        }
+
         
     }
    
@@ -100,7 +108,7 @@ export default class Form extends Component {
                 <form>
                 <input type = "text" className = "style-inputs" onChange = {this.getTitle.bind(this)} placeholder = "Título da sua Ong" required/>
                 <select onClick = {this.getAtuation.bind(this)} required>
-                    <option></option>
+                    <option value = "Atuação">Atuação</option>
                     {categories.map(categories => (
                         <option key = {categories._id} value = {categories._id}>
                             {categories.name}

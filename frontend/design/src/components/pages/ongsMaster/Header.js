@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './styles.css';
 const Header = () => (
     <div className = "header-ongs">
-        <img src = {logoMarca} style = {{marginLeft:"20%",width:"220px",height:"140px",marginTop:"40px"}} />
+        <img src = {logoMarca} style = {{marginLeft:"20%",width:"220px",height:"140px"}} />
 
         <div className = "componentButtons">
         <Link to = "/registerOngs" className = "butcadOng">Cadastre sua Ong</Link>

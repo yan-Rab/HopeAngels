@@ -4,6 +4,7 @@ import {FaRegArrowAltCircleRight, FaDonate, FaRegArrowAltCircleLeft} from 'react
 import {FiLogIn} from 'react-icons/fi';
 import {GiAngelOutfit} from 'react-icons/gi';
 const styleIcons = {width:"80px",height:"80px",marginLeft:"20%"};
+
 const Intructions = () => (
     <div className = "Instructions">
         <div className = "align-Instructions">
