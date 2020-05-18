@@ -7,10 +7,9 @@ import api from '../../../services/api';
 export default class Login extends Component {
 
     state = {
-
         email: "",
         password: "",
-    
+        message: "",
     }
 
     getEmail = (event) => (
@@ -21,19 +20,22 @@ export default class Login extends Component {
         this.setState({password: event.target.value})
     )
 
-    authUsers = async() => {
-      
+    authUsers = async(event) => {
+        event.preventDefault();
         const { email } = this.state;
         const { password } = this.state;
+        try{
+        
         const response = await api.post(`/authenticationUsers`, { email: email, password: password });
         const { _id } = response.data.users;
         const { token } = response.data;
-        if(response){
-            localStorage.setItem("authenticationUsers", token);
-            localStorage.setItem("userId", _id);
-
-            window.location.reload();
-           
+    
+        localStorage.setItem("authenticationUsers", token);
+        localStorage.setItem("userId", _id);
+        window.location.reload();
+        
+        }catch(error){
+            this.setState({message: "Usuário ou senha incorretos!"})
         }
         
     }
@@ -42,19 +44,19 @@ export default class Login extends Component {
         return(
             <div className = "body-login">
                 <div className = "logo-form">
-                <img src = {logoMarca} style = {{width:"280px",height:"190px"}}></img>
+                <img src = {logoMarca} style = {{width:"280px",height:"190px"}} alt = "logomarca do site"/>
 
-                <div className = "form-login">
-                    <input type = "text" onChange = {this.getEmail.bind(this)} placeholder = "E-mail" />
-                    <input type = "password"  onChange = {this.getPassword.bind(this)} placeholder = "Senha"/>
-                    <button onClick = {this.authUsers.bind(this)} className = "link-entrar">Entrar</button>
+                <form className = "form-login" onSubmit = {this.authUsers.bind(this)}>
+                    <input type = "email" onChange = {this.getEmail.bind(this)} placeholder = "E-mail" required autoFocus />
+                    <input type = "password"  onChange = {this.getPassword.bind(this)} placeholder = "Senha" required/>
+                    <button type = 'submit' className = "link-entrar">Entrar</button>
 
                     <p style ={{marginTop: "15px", fontSize:"18px",marginBottom: "30px"}}>
                     Novo no Anjos da Esperança? 
                     <Link to = "/CadastroUsers" className = "link-cadastrar">Cadastre-se</Link>
                     </p>
-                    
-                </div>
+                    <p>{this.state.message}</p>
+                </form>
                 
                 </div>
             </div>

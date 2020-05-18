@@ -6,9 +6,7 @@
     justify-content: center;
     
 }
-body{
-    background-color: #eeeeee;
-}
+
 .body-title {
     display: flex;
 }
@@ -64,8 +62,8 @@ body{
 }
 
 .body-form button[disabled]{
-    border: solid 3px #e7e7e7;
-    color:#b7b7b7;
+    border: solid 3px #a8a8a8;
+    color:#828282;
     background:#eeeeee;
 }
 

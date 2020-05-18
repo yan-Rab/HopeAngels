@@ -43,7 +43,7 @@ module.exports = {
         const users = await Users.findOne({email}).select('+password');
 
         if(!users){
-            return response.status(400).json({error: "User not found"});
+            return response.status(404).json({error: "User not found"});
         }
 
         if(!await bcrypt.compare(password, users.password)){

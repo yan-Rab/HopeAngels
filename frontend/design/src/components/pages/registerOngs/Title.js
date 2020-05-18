@@ -4,7 +4,7 @@ import './styles.css';
 const Title = () => (
     <div>
         <div className = "Title">
-        <img src = {logomarca} style = {{width: "300px",height:"200px",marginBottom:"50px"}} />  
+        <img src = {logomarca} style = {{width: "300px",height:"200px",marginBottom:"50px"}} alt= "logomarca do site"/>  
             <p>Registre sua Ong e nos ajude nessa batalha em prol da solidariedade.</p>
         </div>
     </div>

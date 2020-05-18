@@ -40,4 +40,14 @@ export const PrivateRouteRegisterOngs = ({component: Component, ...rest}) => (
             <Redirect to = { {pathname: "/", state: { from: props.location } } } />
         )
     )} />
+);
+
+export const PrivateRouteRegisterUsers = ({component: Component, ...rest}) => (
+    <Route {...rest} render = {props => (
+        authUsers() ? (
+            <Redirect to = {{pathname: "/router-app-ongs", state : {from: props.location}}} />
+        ) : (
+            <Component {...props} />
+        )
+    )} />
 )

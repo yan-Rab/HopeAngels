@@ -83,12 +83,9 @@ export default class Form extends Component {
         try{
 
         await api.post("/createOngs", {
-            title,
-            description,
-            category,
-            email,
-            password,
-            cnpj
+            title, description,
+            category, email,
+            password, cnpj
         });
 
         }catch(error){
@@ -105,7 +102,7 @@ export default class Form extends Component {
        
         return(
             <div className = "body-form-ongs">
-                <form>
+                <form onSubmit = {this.registerOng.bind(this)}>
                 <input type = "text" className = "style-inputs" onChange = {this.getTitle.bind(this)} placeholder = "Título da sua Ong" required/>
                 <select onClick = {this.getAtuation.bind(this)} required>
                     <option value = "Atuação">Atuação</option>
@@ -120,7 +117,7 @@ export default class Form extends Component {
                 <input type = "number" className = "style-inputs" onChange = {this.getCNPJ.bind(this)} placeholder = "CNPJ" required autoFocus />
                 <input type = "password" className = "style-inputs" onChange = {this.getPassword.bind(this)} placeholder = "Senha" />
                 <input type = "password" className = "style-inputs" onChange = {this.getConfirmPassword.bind(this)} placeholder = "Confirme sua senha!" required />
-                <button type = "submit" onClick = {this.registerOng.bind(this)} className = "but-register" disabled = {this.disabledButton()}>
+                <button type = "submit" className = "but-register" disabled = {this.disabledButton()}>
                     Registrar
                 </button>
                 </form>
