@@ -1,5 +1,4 @@
 import React ,{ Component } from'react';
-import "./styles.css";
 export default class Logout extends Component {
     logout = () => {
         localStorage.removeItem("authenticationUsers");

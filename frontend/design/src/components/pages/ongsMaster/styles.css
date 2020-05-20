@@ -17,11 +17,11 @@
 }
 
 .header-ongs .componentButtons .butcadOng{
-width: 220px;
+width: 150px;
 margin-bottom: 20px;
 text-decoration: none;
 margin-right: 30px;
-height: 50px;
+height: 45px;
 display: flex;
 justify-content: center;
 align-items: center;

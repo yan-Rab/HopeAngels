@@ -16,7 +16,7 @@
     flex-wrap: wrap;
 }
  
-form{
+.body-login-ongs .container form{
     margin-top: 40px;
     display: flex;
     max-width: 300px;
@@ -26,18 +26,18 @@ form{
     margin-bottom: 40px;
 }
 
-form input{
+.body-login-ongs .container form input{
     margin-bottom: 20px;
     padding: 5px;
     width: 290px;
     height: 35px;
-    border: solid 2px #9999ff;
+    border: solid #999999 1px ;
     border-radius: 4px;
     font-size: 16px;
     outline: none;
 }
 
-form button {
+.body-login-ongs .container form button {
     width: 305px;
     height: 50px;
     padding: 5px;
@@ -45,26 +45,26 @@ form button {
     border: solid 2px #9999ff;
     color: #9999ff;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     transition: all 0.4s;
     border-radius: 4px;
 }
 
-form button:hover{
+.body-login-ongs .container form button:hover{
     background-color: #9999ff;
     color: white;
    
 }
 
-form p {
+.body-login-ongs .container form p {
     margin-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
-    color: #666699;
+    color: #333333;
 }
 
-form a {
+ .body-login-ongs .container form a {
     text-decoration: none;
-    color: #003366;
+    color: #6666cc;
 }

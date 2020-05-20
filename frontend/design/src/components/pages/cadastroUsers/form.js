@@ -28,11 +28,16 @@ export default class Form extends React.Component {
 
     insertInforsUsers = async(event) => {
         event.preventDefault();
-         await api.post('/createUsers', {
+        const response =  await api.post('/createUsers', {
             name: this.state.name,
             email: this.state.email,
             password: this.state.confirmPassword,
         });
+
+        if(response){
+            localStorage.setItem("authenticationUsers", response.data.token);
+            window.location.reload();
+        }
     }
 
     disabledButton = () => {

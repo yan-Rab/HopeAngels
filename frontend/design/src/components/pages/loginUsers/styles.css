@@ -11,11 +11,11 @@ body{
     
 }
 .body-login .logo-form{
-    margin-top: 100px;
+    margin-top: 80px;
 }
 .body-login .logo-form .form-login {
     display: block;
-    max-width: 360px;
+    max-width: 350px;
     margin-top: 50px;
     
 }
@@ -24,7 +24,7 @@ body{
     margin-top: 20px;
     border-radius: 2px;
     border: solid 1px #000033;
-    width: 350px;
+    width: 310px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     padding: 4px;
@@ -32,14 +32,10 @@ body{
     transition: all 0.3s;
 }
 
-.body-login .logo-form .form-login input:hover{
-    border: solid 2px #0066cc;
-}
-
 .body-login .logo-form .form-login .link-entrar {
     text-decoration: none;
     display: flex;
-    width: 360px;
+    width: 320px;
     height: 55px;
     justify-content: center;
     align-items: center;
@@ -58,7 +54,7 @@ body{
 
 .body-login .logo-form .form-login .link-cadastrar {
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     color: #003366;
     margin-left: 5px;
     font-family: Georgia, 'Times New Roman', Times, serif;
