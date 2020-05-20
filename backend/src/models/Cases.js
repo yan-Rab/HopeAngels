@@ -13,7 +13,8 @@ const CasesSchema = new mongoose.Schema({
     },
 
     ong : {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref : 'Ongs',
         required: true,
     },
 

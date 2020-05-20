@@ -51,10 +51,7 @@ module.exports = {
         }
         users.password = undefined;
 
-        return response.json({
-            users, 
-            token: generateToken({id: users.id}),
-        });   
+        return response.json({users,token: generateToken({id: users.id}), });   
     }
 
 }

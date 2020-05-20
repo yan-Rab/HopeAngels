@@ -2,6 +2,13 @@ const mongoose = require("mongoose");
 const mongoosePaginate = require("mongoose-paginate");
 const bcrypt = require('bcryptjs');
 const OngsSchema = new mongoose.Schema({
+
+    proprietor: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Users',
+        require: true,
+    },
+
     title: {
         type: String,
         required: true,

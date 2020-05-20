@@ -8,7 +8,7 @@ const Header = () => (
         <img src = {logoMarca} style = {{marginLeft:"20%",width:"220px",height:"140px"}} alt = "logomarca do site"/>
 
         <div className = "componentButtons">
-        <Link to = "/registerOngs" className = "butcadOng">Cadastre sua Ong</Link>
+        <Link to = "/registerOngs" className = "butcadOng">Minha Ong</Link>
         <Logout />
         </div>
 
