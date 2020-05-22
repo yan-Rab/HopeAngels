@@ -23,12 +23,13 @@ body{
     height: 45px;
     margin-top: 20px;
     border-radius: 2px;
-    border: solid 1px #000033;
+    border: solid 1px grey;
     width: 310px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     padding: 4px;
-    outline: none;
+    outline-color: #6699cc;
+    outline-width: 2px;
     transition: all 0.3s;
 }
 

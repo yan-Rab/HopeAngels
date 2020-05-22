@@ -7,7 +7,7 @@ import "./styles.css";
 export default class Main extends Component {
     render(){
         return(
-            <div>
+            <div className = "body-father">
                 <Header />
                 <Infors />
                 <Instructions />

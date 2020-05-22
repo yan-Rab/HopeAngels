@@ -39,12 +39,13 @@
     padding: 4px;
     width: 270px;
     height: 45px;
-    background-color: #f6f6f6;
+    background-color: white;
     font-size: 16px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 2px;
-    border: solid 1px #000033;
-    outline: none;
+    border: solid 1px gray;
+    outline-color:#6699cc;
+    outline-width: 2px;
     
 }
 
@@ -65,13 +66,10 @@
 .body-form button[disabled]{
     border: solid 3px #a8a8a8;
     color:#828282;
-    background:#eeeeee;
+    background-color:white;
 }
 
-.body-form button:active{
-    box-shadow: none;
-    margin-top: 11px;
-}
+
 
 .body-form a {
     text-decoration: none;

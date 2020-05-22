@@ -1,17 +1,19 @@
+
+
 .main-header{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
     min-height: 120px;
-
+    background-attachment: fixed;
 }
 
 .main-header .cadastro-entry{
     margin-right: 10%;
     margin-left: 20px;
     display: flex;
-    width: 270px;
+    width: 290px;
     justify-content: space-between;
     align-items: center;
 }
@@ -19,8 +21,8 @@
 .main-header .cadastro-entry .link-entry{
     text-decoration: none;
     display: flex;
-    height: 40px;
-    width: 100px;
+    height: 45px;
+    width: 120px;
     border-radius: 2px;
     justify-content: center;
     align-items: center;
@@ -46,10 +48,10 @@
     display: flex;
     margin-top: 20px;
     flex-wrap: wrap;
-    justify-content:space-between;
+    justify-content:space-around;
     background-color: #fafafa;
     padding: 20px;
-    height: 500px;
+    
 }
 
 .body-infors .about-we {
@@ -71,39 +73,28 @@
 }
 
 .Instructions {
+ background-color: #f5f5f5;
  display: flex;
- width: 100%;
- justify-content: center;
+ padding: 30px;
+ justify-content: space-between;
  align-items: center;
- margin-top: 30px;
- 
-
+ flex-wrap: wrap;
 }
 
 .Instructions p {
-    font-size: 28px;
-    font-weight: bolder;
+    font-size: 24px;
+    font-weight: bold;
     font-family: cursive;
     color: #333333;
-   
-}
-.Instructions .align-Instructions{
-    display: flex;
-    max-width: 770px;
-    flex-wrap: wrap;
-    justify-content:center;
- 
-  
+    margin-top: 10px;
 }
 
-.Instructions .body-Instructions {
+
+.div-icons{
     display: flex;
- 
-    max-width: 750px;
-    padding: 20px;
-    margin-left: 20px;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    max-width: 180px;
+    flex-wrap: wrap;
+    padding: 10px;
     justify-content: center;
-    
+    align-items: center;
 }

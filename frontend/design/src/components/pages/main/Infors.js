@@ -5,7 +5,7 @@ import unidos from '../../../images/unidos.png';
 import Contato from './Contato';
 const Infors = () => (
     <div className = "body-infors">
-        <img src = {unidos} style = {{marginLeft: "10%"}} />
+        <img src = {unidos}  style = {{marginTop:"-4%"}} />
         <div className = 'about-we'>
         <h1>Sobre nós</h1>
         <span style = {{fontSize:"20px"}}>

@@ -8,7 +8,7 @@ export default class LoginOngs extends Component {
         return(
             <div className = "body-login-ongs">
                 <div className = 'container'>
-                    <img src = {logoMarca} style = {{width: "250px", height: "180px"}} />
+                    <img src = {logoMarca} style = {{width: "250px", height: "180px"}} alt = "Logomarca do site" />
                     <AuthOngs />
                 </div>
             </div>
