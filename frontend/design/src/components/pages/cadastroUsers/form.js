@@ -2,6 +2,7 @@ import React from 'react';
 import api from '../../../services/api';
 import { Link } from "react-router-dom";
 import logoMarca from "../../../images/logomarca.png";
+import { DebounceInput } from 'react-debounce-input';
 export default class Form extends React.Component {
 
     state = {
@@ -13,6 +14,7 @@ export default class Form extends React.Component {
     }
 
     getName = (event) => {
+        console.log(event.target.value);
         this.setState({name: event.target.value});  
     }
     getEmail = (event) => {
@@ -41,21 +43,14 @@ export default class Form extends React.Component {
     }
 
     disabledButton = () => {
-        const { name } = this.state;
-        const { email } = this.state;
         const { createPassword } = this.state;
         const { confirmPassword } = this.state;
 
-        if(name !== "" && email !== "" && createPassword !== "" && confirmPassword !== ""){
-            if(createPassword === confirmPassword){
+            if(createPassword === confirmPassword && createPassword !== "" && confirmPassword !== ""){
                 return false;
             }else{
                 return true;
             }
-        }
-        else{
-            return true;
-        }
     }
     
     render(){
@@ -63,22 +58,24 @@ export default class Form extends React.Component {
         return (
             <div className = 'body-form'>
             
-            <div style = {{margin: "20px 20px 20px 80px"}}>
-            <form onSubmit = {this.insertInforsUsers.bind(this)}>
-            <img src = {logoMarca} style = {{width:"280px",height:"190px",marginRight:"20px"}} alt = "logomarca do site" />
-            <input type = "text"  onChange = {this.getName.bind(this)} placeholder = " Nome completo"/>
-            <input type = "email"  onChange = {this.getEmail.bind(this)} placeholder = " E-mail"required autoFocus />
-            <input type = "password" placeholder = " Crie sua senha" onChange = {this.getCreatePassword.bind(this)} />
-            <input type = "password" placeholder = " Confirme sua senha" onChange = {this.getConfirmPassword.bind(this)}/>
+                <div style = {{margin: "20px 20px 20px 80px"}}>
             
-        <button type = "submit" disabled = {this.disabledButton()} >Cadastrar</button>
-            
-            <span style = {{fontSize: "20px"}}>
-                <p style = {{marginTop:"15px"}}>Já possui uma Conta? <Link to = "/LoginUsers">Entre</Link></p>
-            </span>
+                    <form onSubmit = {this.insertInforsUsers.bind(this)}>
+                        <img src = {logoMarca} style = {{width:"280px",height:"190px",marginRight:"20px"}} alt = "logomarca do site" />
+                    
+                        <DebounceInput type = "text" debounceTimeout = {800} onChange = {this.getName.bind(this)} placeholder = "Nome completo" required/>
+                        <DebounceInput type = "email" debounceTimeout = {800} onChange = {this.getEmail.bind(this)} placeholder = "E-mail" required autoFocus />
+                        <DebounceInput type = "password" debounceTimeout = {800} placeholder = " Crie sua senha" onChange = {this.getCreatePassword.bind(this)} required />
+                        <DebounceInput type = "password" debounceTimeout = {800} placeholder = " Confirme sua senha" onChange = {this.getConfirmPassword.bind(this)} required/>
+                        
+                        <button type = "submit" disabled = {this.disabledButton()} >Cadastrar</button>
+                        
+                        <span style = {{fontSize: "20px"}}>
+                            <p style = {{marginTop:"15px"}}>Já possui uma Conta? <Link to = "/LoginUsers">Entre</Link></p>
+                        </span>
 
-            </form>
-            </div>
+                    </form>
+                </div>
             </div>
         )
     }

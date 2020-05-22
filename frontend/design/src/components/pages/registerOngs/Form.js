@@ -112,6 +112,7 @@ export default class Form extends Component {
                         </option>
                     ))}
                 </select>
+                
                 <input type = "text" className = "style-inputs" style = {{width:"91%"}} onChange = {this.getDescription.bind(this)} placeholder = "Faça uma breve descrição" required />
                 <input type = "email" className = "style-inputs" onChange = {this.getEmail.bind(this)} placeholder = "E-mail" required autoFocus />
                 <input type = "number" className = "style-inputs" onChange = {this.getCNPJ.bind(this)} placeholder = "CNPJ" required autoFocus />

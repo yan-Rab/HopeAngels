@@ -1,10 +1,11 @@
 import React from 'react';
 import "./styles.css";
-import apresentadores from '../../../images/apresentadores.png';
+
+import unidos from '../../../images/unidos.png';
 import Contato from './Contato';
 const Infors = () => (
     <div className = "body-infors">
-        <img src = {apresentadores} style = {{marginLeft: "10%"}} />
+        <img src = {unidos} style = {{marginLeft: "10%"}} />
         <div className = 'about-we'>
         <h1>Sobre nós</h1>
         <span style = {{fontSize:"20px"}}>

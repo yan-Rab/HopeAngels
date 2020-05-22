@@ -44,11 +44,12 @@
 
 .body-infors {
     display: flex;
-    margin-top: 40px;
+    margin-top: 20px;
     flex-wrap: wrap;
     justify-content:space-between;
     background-color: #fafafa;
     padding: 20px;
+    height: 500px;
 }
 
 .body-infors .about-we {
