@@ -58,6 +58,18 @@ module.exports = {
 
         return response.json({ongs,token: generateToken({id: ongs.id})});
 
+    },
+
+    async searchOngEspecific(request, response){
+        const { value } = request.body;
+        const regex = new RegExp(`${value}[0-9]?`,'i');
+        const ongs = await Ongs.find({title: {$regex: regex}});
+        if(!ongs){
+            return response.json({error: "Ong not found"});
+        }
+        return response.json(ongs);
     }
+
+    
     
 }

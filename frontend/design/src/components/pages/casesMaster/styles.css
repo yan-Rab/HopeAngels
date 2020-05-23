@@ -1,16 +1,34 @@
 .header-Cases{
 display: flex;
+flex-wrap: wrap;
 width: 100%;
 height: 170px;
 justify-content: space-around;
 align-items: center;
-background-color: #f9f9f9;
+
+}
+
+.header-Cases .search-cases {
+    display: flex;
+    max-width: 650px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-Cases .search-cases input {
+    width: 500px;
+    height: 40px;
+    margin-left: 30px;
+    border: solid 2px #6699cc ;
+    border-radius: 4px;
+    font-size: 18px;
+    padding: 5px;
 }
 
 .logout-but{
     width: 130px ;
     height: 48px;
-    color: #0066cc;
+    color: #7f97af;
     font-weight: bold;
     border: solid 2px #0066cc;
     border-radius: 4px;

@@ -19,6 +19,7 @@ routes.get('/searchOngs',authMiddleware, OngsController.searchOngs);
 routes.post('/createOngs',authMiddleware, OngsController.createOngs);
 routes.delete('/destroyOngs/:id', OngsController.destroyOngs);
 routes.post('/authenticationOngs',OngsController.authenticationOngs);
+routes.post('/searchOng', OngsController.searchOngEspecific);
 
 routes.get('/searchCases', authMiddleware, CasesController.searchCases);
 routes.post('/searchCasesById', CasesController.searchCasesById);
