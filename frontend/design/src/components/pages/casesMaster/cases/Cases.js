@@ -5,21 +5,28 @@ import CaseComponent from './CaseComponent';
 import './styles.css';
 export default class Cases extends Component {
 
-    state = {
-        casesInfors: [],
+    
+    constructor(props){
+        super(props);
+        this.state = {
+            casesInfors: [],
+        }
     }
     
      componentDidMount(){
        this.loadCases();
     }
 
+    componentDidUpdate(prevProps){
+        if(this.props.search !== prevProps.search){
+            this.setState({casesInfors: this.props.search});
+        }
+    }
+
     loadCases = async() => {
         const {id} = this.props.idOng;
-        
         const response = await api.post(`/searchCasesById`, {ong: id});
-        console.log(response.data.docs);
         this.setState({casesInfors: response.data.docs});
-
     }
  
 

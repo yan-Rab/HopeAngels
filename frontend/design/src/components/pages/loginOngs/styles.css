@@ -29,8 +29,8 @@
 .body-login-ongs .container form input{
     margin-bottom: 20px;
     padding: 5px;
-    width: 320px;
-    height: 40px;
+    width: 340px;
+    height: 45px;
     border: solid #999999 1px ;
     border-radius: 4px;
     font-size: 16px;
@@ -39,7 +39,7 @@
 }
 
 .body-login-ongs .container form button {
-    width: 332px;
+    width: 352px;
     height: 50px;
     padding: 5px;
     background-color: white ;

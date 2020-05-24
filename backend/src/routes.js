@@ -25,5 +25,6 @@ routes.get('/searchCases', authMiddleware, CasesController.searchCases);
 routes.post('/searchCasesById', CasesController.searchCasesById);
 routes.post('/createCases',authMiddleware, CasesController.createCases);
 routes.delete('/destroyCases/:id', CasesController.destroyCases);
+routes.post('/searchCasesEspecify', CasesController.searchCasesEspecify);
 
 module.exports = routes;

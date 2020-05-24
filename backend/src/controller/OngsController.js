@@ -67,7 +67,7 @@ module.exports = {
         if(!ongs){
             return response.json({error: "Ong not found"});
         }
-        return response.json(ongs);
+        return response.json({ongs: ongs});
     }
 
     

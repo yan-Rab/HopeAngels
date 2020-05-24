@@ -6,6 +6,7 @@
     align-items: center;
     flex-wrap: wrap;
     background-color: #99ccff;
+
 }
 
 .search-ongs{
@@ -15,6 +16,17 @@
     align-items: center;
     padding: 20px;
 
+}
+.search-ongs .but-search{
+    margin-left: 20px;
+    background: none;
+    outline: none;
+}
+.search-ongs .but-search img{
+    width: 60px;
+    height: 60px;
+   
+    
 }
 .header-ongs .search-ongs input{
     border: solid 2px #006699;

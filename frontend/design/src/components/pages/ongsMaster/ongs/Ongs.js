@@ -3,12 +3,25 @@ import api from '../../../../services/api';
 import OngsComponent from './OngsComponent';
 import './styles.css';
 export default class Ongs extends Component {
-    state = {
-        ongsInfors: [],
-    }
+    
 
+    constructor(props){
+        super(props);
+        
+        this.state = {
+            ongsInfors: [],
+        };
+        
+    }
+    
     componentDidMount(){
         this.loadOngs();
+    }
+
+    componentDidUpdate(prevProps){
+        if(this.props.ongs !== prevProps.ongs){
+            this.setState({ongsInfors: this.props.ongs})
+        }
     }
 
     loadOngs = async() => {

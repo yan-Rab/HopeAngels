@@ -25,4 +25,11 @@ module.exports = {
         await Cases.findByIdAndDelete(request.params.id);
         return response.send("Caso deletado!");
     },
+
+    async searchCasesEspecify(request,response){
+        const { value } = request.body;
+        const regex = new RegExp(`${value}[0-9]?`, 'i');
+        const cases = await Cases.find({title: { $regex: regex}})
+        return response.json({cases: cases});
+    }
 }

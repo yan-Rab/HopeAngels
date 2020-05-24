@@ -12,6 +12,7 @@ export default class OngsMaster extends Component {
 
     state = {
         searchOngs: "",
+        ongs: [],
     }
 
     getSearch = (event) => (
@@ -21,7 +22,8 @@ export default class OngsMaster extends Component {
     searchOngs = async() => {
         const { searchOngs } = this.state;
         const response = await api.post('/searchOng', {value: searchOngs});
-        console.log(response.data);
+        
+        this.setState({ongs: response.data.ongs});
     }
 
     render(){
@@ -47,7 +49,7 @@ export default class OngsMaster extends Component {
                 </div>
 
                 <div className = "body-Ongs">
-                <Ongs />
+                <Ongs ongs = {this.state.ongs} />
                 </div>
             </div>
         )
