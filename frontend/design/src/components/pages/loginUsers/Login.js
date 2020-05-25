@@ -44,7 +44,7 @@ export default class Login extends Component {
         return(
             <div className = "body-login">
                 <div className = "logo-form">
-                <img src = {logoMarca} style = {{width:"280px",height:"190px"}} alt = "logomarca do site"/>
+                <img src = {logoMarca} style = {{maxWidth:"280px",maxHeight:"190px",minWidth:"140px",minHeight:"90px"}} alt = "logomarca do site"/>
 
                 <form className = "form-login" onSubmit = {this.authUsers.bind(this)}>
                     <input type = "email" onChange = {this.getEmail.bind(this)} placeholder = "E-mail" required autoFocus />

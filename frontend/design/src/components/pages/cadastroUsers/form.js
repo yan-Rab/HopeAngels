@@ -58,10 +58,10 @@ export default class Form extends React.Component {
         return (
             <div className = 'body-form'>
             
-                <div style = {{margin: "20px 20px 20px 80px"}}>
+                
             
                     <form onSubmit = {this.insertInforsUsers.bind(this)}>
-                        <img src = {logoMarca} style = {{width:"280px",height:"190px",marginRight:"20px"}} alt = "logomarca do site" />
+                        <img src = {logoMarca} style = {{maxWidth:"280px",maxHeight:"190px"}} alt = "logomarca do site" />
                     
                         <DebounceInput type = "text" debounceTimeout = {800} onChange = {this.getName.bind(this)} placeholder = "Nome completo" required/>
                         <DebounceInput type = "email" debounceTimeout = {800} onChange = {this.getEmail.bind(this)} placeholder = "E-mail" required autoFocus />
@@ -75,7 +75,7 @@ export default class Form extends React.Component {
                         </span>
 
                     </form>
-                </div>
+               
             </div>
         )
     }

@@ -31,7 +31,7 @@ export default class OngsMaster extends Component {
             <div>
                  <div className = "header-ongs">
         
-                    <img src = {logoMarca} style = {{marginLeft:"5%",width:"220px",height:"140px"}} alt = "logomarca do site"/>
+                    <img src = {logoMarca} style = {{width:"220px",height:"140px"}} alt = "logomarca do site"/>
                 
                     <div className = "search-ongs">
                         

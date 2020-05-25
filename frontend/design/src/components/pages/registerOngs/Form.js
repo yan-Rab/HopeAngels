@@ -11,7 +11,6 @@ export default class Form extends Component {
         cnpj: "",
         password: "",
         confirmePassword: "",
-
         categories: [],
         messageError: "",
     }
@@ -52,24 +51,15 @@ export default class Form extends Component {
 
     
     disabledButton = () => {
-        const {title} = this.state;
-        const {description} =  this.state;
-        const {category} = this.state;
-        const {email} = this.state;
         const {cnpj} = this.state;
         const {password} = this.state;
         const {confirmePassword} = this.state;
 
-        if(title !== "" && description !== "" && category !== "Atuação" && email !== "" &&
-           cnpj !== "" && password !== "" && confirmePassword !== ""){
-               if(password === confirmePassword && cnpj.length === 11){
-                   return false
-               }else{
-                    return true
-               }
-           }else{
-                return true
-           }
+        if(password === confirmePassword && cnpj.length === 11){
+            return false
+        }else{
+            return true
+        }
     }
 
     registerOng = async(event) => {
@@ -113,11 +103,11 @@ export default class Form extends Component {
                     ))}
                 </select>
                 
-                <input type = "text" className = "style-inputs" style = {{width:"91%"}} onChange = {this.getDescription.bind(this)} placeholder = "Faça uma breve descrição" required />
                 <input type = "email" className = "style-inputs" onChange = {this.getEmail.bind(this)} placeholder = "E-mail" required autoFocus />
                 <input type = "number" className = "style-inputs" onChange = {this.getCNPJ.bind(this)} placeholder = "CNPJ" required autoFocus />
-                <input type = "password" className = "style-inputs" onChange = {this.getPassword.bind(this)} placeholder = "Senha" />
+                <input type = "password" className = "style-inputs" onChange = {this.getPassword.bind(this)} placeholder = "Senha" required />
                 <input type = "password" className = "style-inputs" onChange = {this.getConfirmPassword.bind(this)} placeholder = "Confirme sua senha!" required />
+                <input type = "text" className = "style-inputs" style = {{width:"100%"}} onChange = {this.getDescription.bind(this)} placeholder = "Faça uma breve descrição" required />
                 <button type = "submit" className = "but-register" disabled = {this.disabledButton()}>
                     Registrar
                 </button>

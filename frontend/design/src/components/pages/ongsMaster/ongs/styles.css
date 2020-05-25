@@ -1,6 +1,9 @@
 .Ongs{
     display: flex;
-    width: 70%;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -10,12 +13,12 @@
     display: block;
     flex-wrap: wrap;
     width: 40%;
-    min-width: 400px;
-    background-color: white;
+    min-width: 250px;
+    background-color: #f3f3f3;
     padding: 20px;
     border: solid 1px #d3d3d3;
     border-radius: 8px;
-    box-shadow: 1px 2px 2px #d3d3d3;
+    box-shadow: 2px 2px 2px #d3d3d3;
     line-height: 35px;
 }
 
@@ -50,5 +53,5 @@
 .OngComponent p {
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    justify-content: space-between;
+  
 }

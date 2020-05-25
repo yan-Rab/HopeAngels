@@ -5,7 +5,7 @@ import unidos from '../../../images/unidos.png';
 import Contato from './Contato';
 const Infors = () => (
     <div className = "body-infors">
-        <img src = {unidos} style = {{minWidth:"200px", minHeight:"60px", maxWidth:"800px", maxHeight:"600px"}}  />
+        <img src = {unidos} style = {{minWidth:"180px", minHeight:"90px", maxWidth:"700px", maxHeight:"550px"}}  />
         <div className = 'about-we'>
         <h1>Sobre nós</h1>
         <span style = {{fontSize:"22px"}}>
