@@ -1,6 +1,6 @@
 .Ongs{
     display: flex;
-    max-width: 1200px;
+    max-width: 1100px;
     justify-content: space-between;
     align-items: center;
     padding: 30px;
@@ -12,13 +12,13 @@
     margin: 20px 20px 20px 10px;
     display: block;
     flex-wrap: wrap;
-    width: 40%;
-    min-width: 250px;
+    width: 38%;
+    min-width: 280px;
     background-color: #f3f3f3;
-    padding: 20px;
-    border: solid 1px #d3d3d3;
-    border-radius: 8px;
-    box-shadow: 2px 2px 2px #d3d3d3;
+    padding: 30px;
+    border: solid 1px #cccccc;
+    border-radius: 50px;
+    
     line-height: 35px;
 }
 
@@ -32,7 +32,7 @@
     color: #0066cc;
     font-weight: bold;
     margin-top: 25px;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     transition: all 0.4s;
@@ -45,7 +45,7 @@
 }
 
 .OngComponent strong {
-    font-size: 20px;
+    font-size: 18px;
     color: #003366;
     font-family: cursive;
 }

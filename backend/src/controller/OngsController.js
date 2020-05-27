@@ -14,7 +14,7 @@ function generateToken(params = {}){
 module.exports = {
     async searchOngs(request,response){
         const ongs = await Ongs.paginate();
-        return response.json({ongs, user: request.userId});
+        return response.json({ongs});
     },
 
     async createOngs(request,response){
@@ -22,7 +22,7 @@ module.exports = {
         try{
 
         if(await Ongs.findOne({email})){
-            return response.status(400).send("Ong already exists!");
+            return response.status(400).json({error:"Ong already exists!"});
         }
 
         const ongs = await Ongs.create(request.body);
@@ -31,7 +31,7 @@ module.exports = {
         return response.json({ongs, token: generateToken({id: ongs.id})});
 
         }catch(error){
-            return response.status(400).send("Register failed!");
+            return response.status(400).json({error:"Register failed!"});
         }
 
     },
@@ -42,16 +42,20 @@ module.exports = {
     },
 
     async authenticationOngs(request,response){
-        const { email, password } = request.body;
-
+        const { email, password, proprietor } = request.body;
+    
         const ongs = await Ongs.findOne({email}).select("+password");
 
         if(!ongs){
-            return response.status(400).send("Ong not found!");
+            return response.status(400).json({error:"Ong not found!"});
+        }
+
+        if(proprietor != ongs.proprietor){
+            return response.status(404).json({error: "You are not proprietor this Ong"})
         }
 
         if(!await bcrypt.compare(password, ongs.password)){
-            return response.status(400).send("Invalid password!");
+            return response.status(400).json({error: "Invalid password!"});
         }
 
         ongs.password = undefined;
@@ -64,9 +68,11 @@ module.exports = {
         const { value } = request.body;
         const regex = new RegExp(`${value}[0-9]?`,'i');
         const ongs = await Ongs.find({title: {$regex: regex}});
-        if(!ongs){
-            return response.json({error: "Ong not found"});
+        
+        if(ongs.length === 0){
+            return response.status(400).json({error: "Search not found"})
         }
+
         return response.json({ongs: ongs});
     }
 

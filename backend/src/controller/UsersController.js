@@ -23,13 +23,13 @@ module.exports = {
         try{
 
         if(await Users.findOne({email})){
-            return response.status(400).json({error: "User Already Exists!"});
+            return response.status(400).json({error: "User already exists!"});
         }
 
         const users = await Users.create(request.body);
         users.password = undefined;
 
-        return response.json({users, token: generateToken({id: users.id})});
+        return response.json({users, token: generateToken({id: users.id}), register: true});
 
        }catch(error){
            response.status(400).json({error: "Register of User failed!"});
@@ -51,7 +51,7 @@ module.exports = {
         }
         users.password = undefined;
 
-        return response.json({users,token: generateToken({id: users.id}), });   
+        return response.json({users,token: generateToken({id: users.id}), auth: true });   
     }
 
 }

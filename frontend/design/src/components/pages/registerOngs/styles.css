@@ -7,7 +7,7 @@
     justify-content: space-evenly;
     align-items: center;
     background-color: white;
-    
+    box-shadow: 1px 1px 1px #999999;
 }
 
 .Title {
@@ -37,19 +37,20 @@
     margin-bottom: 20px;
     padding: 5px;
     font-size: 20px;
-    border: 2px solid #999999;
+    border: 1px solid #003366;
     outline: none;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .body-form-ongs select {
+    
     display: flex;
     height: 57px;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 5px;
     font-size: 20px;
-    border: 2px solid  #999999;
+    border : 1px solid  #003366;
     outline: none;
     border-radius: 4px;
 }
@@ -75,8 +76,8 @@
 
 .body-form-ongs button[disabled]{
     background-color: white;
-    border: solid #d1d1d1 2px;
+    border: solid #6699ff 2px;
     
-    color: grey;
+    color: #6699ff;
 }
 

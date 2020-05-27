@@ -3,6 +3,7 @@ import api from '../../../services/api';
 import { Link } from "react-router-dom";
 import logoMarca from "../../../images/logomarca.png";
 import { DebounceInput } from 'react-debounce-input';
+
 export default class Form extends React.Component {
 
     state = {
@@ -14,7 +15,7 @@ export default class Form extends React.Component {
     }
 
     getName = (event) => {
-        console.log(event.target.value);
+       
         this.setState({name: event.target.value});  
     }
     getEmail = (event) => {
@@ -30,15 +31,22 @@ export default class Form extends React.Component {
 
     insertInforsUsers = async(event) => {
         event.preventDefault();
+        try{
         const response =  await api.post('/createUsers', {
             name: this.state.name,
             email: this.state.email,
             password: this.state.confirmPassword,
         });
 
-        if(response){
             localStorage.setItem("authenticationUsers", response.data.token);
-            window.location.reload();
+            
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500)
+        
+        }catch(error){
+
+            return error
         }
     }
 
@@ -73,9 +81,9 @@ export default class Form extends React.Component {
                         <span style = {{fontSize: "20px"}}>
                             <p style = {{marginTop:"15px"}}>Já possui uma Conta? <Link to = "/LoginUsers">Entre</Link></p>
                         </span>
-
+                       
                     </form>
-               
+                   
             </div>
         )
     }

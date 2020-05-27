@@ -3,9 +3,10 @@ import "./styles.css";
 
 import unidos from '../../../images/unidos.png';
 import Contato from './Contato';
+const styleImage = {minWidth:"180px", minHeight:"90px", maxWidth:"700px", maxHeight:"550px"}
 const Infors = () => (
     <div className = "body-infors">
-        <img src = {unidos} style = {{minWidth:"180px", minHeight:"90px", maxWidth:"700px", maxHeight:"550px"}}  />
+        <img src = {unidos} style = {styleImage} alt = "Imagem com um grupo de jovens unidos" />
         <div className = 'about-we'>
         <h1>Sobre nós</h1>
         <span style = {{fontSize:"22px"}}>

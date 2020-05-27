@@ -1,36 +1,36 @@
 .header-ongs{
     display: flex;
-    width: 100%;
+    width: 100vw;
     padding: 30px;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    background-color: white;
-    
-
+    background-color: #99ccff;
+  
 }
 
 .search-ongs{
     display: flex;
-    width: 650px;
+    width: 520px;
     justify-content: space-between;
     align-items: center;
     padding: 30px;
 }
 
 .header-ongs .search-ongs input{
-    border: solid 2px #006699;
+    border: solid 2px #6699ff;
     border-radius: 4px;
     display: flex;
     width: 100%;
-    height: 40px;
+    min-width: 160px;
+    height: 35px;
     outline: none;
     padding: 5px;
     font-size: 18px;
 }
 
 .search-ongs .but-search{
-    margin-left: 20px;
+    margin-left: 15px;
     background: none;
     outline: none;
 }
@@ -44,41 +44,42 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 320px;
-    padding: 20px;
+    width: 300px;
+    padding: 30px;
     
 }
 
+
+
 .header-ongs .componentButtons .butcadOng{
-width: 150px;
-margin-bottom: 20px;
-text-decoration: none;
-height: 45px;
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: #f7f7f7;
-color:#9999ff;
-font-weight: bold;
-border: solid 2px #9999ff;
-border-radius: 4px;
-font-size: 18px;
-font-family: Arial, Helvetica, sans-serif;
-transition: all 0.5s;
+    width: 130px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    color:#6699ff;
+    font-weight: bold;
+    border: solid 2px #6699ff;
+    border-radius: 4px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.5s;
 }
 
 .header-ongs .componentButtons .butcadOng:hover {
-    background-color: #9999ff;
+    background-color: #6699ff;
     color: white;
 }
 
 .body-Ongs{
-    overflow: hidden;
     display: flex;
     flex-wrap: wrap;
     padding: 30px;
-    margin-top: 40px;
     width: 100%;
     justify-content: center;
     align-items: center;
+    background-color: #e5e5e5;
 }

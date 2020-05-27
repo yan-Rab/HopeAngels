@@ -5,7 +5,7 @@
     padding: 30px;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: center;
+   justify-content: center;
     align-items: center;
     background-color: #fbfbfb;
 }
@@ -33,13 +33,14 @@
     align-items: center;
     max-width: 400px;
     padding: 30px;
+   
 }
 .body-form input {
     margin-top: 30px;
     display: flex;
     padding: 4px;
     width: 100%;
-    height: 50px;
+    height: 45px;
     background-color: white;
     font-size: 16px;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -53,7 +54,7 @@
     margin-top: 20px;
     display: flex;
     width: 104%;
-    height: 55px;
+    height: 50px;
     justify-content: center;
     align-items: center;
     padding: 4px;
@@ -68,8 +69,8 @@
 }
 
 .body-form button[disabled]{
-    border: solid 3px #a8a8a8;
-    color:#828282;
+    border: solid 2px #6699ff;
+    color:#6699ff;
     background-color:white;
 }
 
@@ -80,6 +81,8 @@
     color: #003366;
     font-weight: 600;
 }
+
+
 
 
 

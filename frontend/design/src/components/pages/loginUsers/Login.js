@@ -3,13 +3,15 @@ import logoMarca from '../../../images/logomarca.png';
 import './styles.css';
 import { Link } from 'react-router-dom'; 
 import api from '../../../services/api';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 
 export default class Login extends Component {
 
     state = {
         email: "",
         password: "",
-        message: "",
     }
 
     getEmail = (event) => (
@@ -32,15 +34,20 @@ export default class Login extends Component {
     
         localStorage.setItem("authenticationUsers", token);
         localStorage.setItem("userId", _id);
-        window.location.reload();
+        
+        setTimeout(() => {
+            window.location.reload();
+        }, 1500)
         
         }catch(error){
-            this.setState({message: "Usuário ou senha incorretos!"})
+            return error;
         }
         
     }
 
+  
     render(){
+       
         return(
             <div className = "body-login">
                 <div className = "logo-form">
@@ -48,16 +55,16 @@ export default class Login extends Component {
 
                 <form className = "form-login" onSubmit = {this.authUsers.bind(this)}>
                     <input type = "email" onChange = {this.getEmail.bind(this)} placeholder = "E-mail" required autoFocus />
-                    <input type = "password"  onChange = {this.getPassword.bind(this)} placeholder = "Senha" required/>
-                    <button type = 'submit' className = "link-entrar">Entrar</button>
+                    <input type = "password"  onChange = {this.getPassword.bind(this)} placeholder = "Senha" required />
+                    <button type = 'submit' className = "link-entrar" >Entrar</button>
 
                     <p style ={{marginTop: "15px", fontSize:"18px",marginBottom: "30px"}}>
                     Novo no Anjos da Esperança? 
                     <Link to = "/CadastroUsers" className = "link-cadastrar">Cadastre-se</Link>
                     </p>
-                    <p>{this.state.message}</p>
+                    <ToastContainer className = "toast-container" limit = {1} />
                 </form>
-                
+                  
                 </div>
             </div>
         )

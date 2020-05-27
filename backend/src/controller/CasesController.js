@@ -30,6 +30,10 @@ module.exports = {
         const { value } = request.body;
         const regex = new RegExp(`${value}[0-9]?`, 'i');
         const cases = await Cases.find({title: { $regex: regex}})
+
+        if(cases.length === 0){
+            return response.status(400).json({error: "Case not found!"})
+        }
         return response.json({cases: cases});
     }
 }

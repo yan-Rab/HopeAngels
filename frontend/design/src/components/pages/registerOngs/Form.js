@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../../services/api';
+
 export default class Form extends Component {
 
     state = {
@@ -54,8 +55,8 @@ export default class Form extends Component {
         const {cnpj} = this.state;
         const {password} = this.state;
         const {confirmePassword} = this.state;
-
-        if(password === confirmePassword && cnpj.length === 11){
+        
+        if(password === confirmePassword && password !== "" && confirmePassword !== "" && cnpj.length === 11){
             return false
         }else{
             return true

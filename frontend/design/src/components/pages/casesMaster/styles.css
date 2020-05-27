@@ -1,9 +1,9 @@
 .header-Cases{
 display: flex;
 flex-wrap: wrap;
-width: 100%;
+width: 100vw;
 padding: 30px;
-background-color: white;
+background-color: #99ccff;
 justify-content: space-around;
 align-items: center;
 
@@ -12,7 +12,7 @@ align-items: center;
 .header-Cases .search-cases {
     display: flex;
     padding: 20px;
-    width: 650px;
+    width: 540px;
     justify-content: space-between;
     align-items: center;
 }
@@ -31,6 +31,7 @@ align-items: center;
 .header-Cases .search-cases input {
     width: 100%;
     display: flex;
+    min-width: 150px;
     height: 40px;
     margin-left: 30px;
     border: solid 2px #6699cc ;
@@ -40,27 +41,14 @@ align-items: center;
     outline: none;
 }
 
-.logout-but{
-    width: 150px ;
-    height: 48px;
-    color: #7f97af;
-    font-weight: bold;
-    border: solid 2px #0066cc;
-    border-radius: 4px;
-    transition: all 0.4s;
-    font-size: 18px;
-}
 
-.logout-but:hover{
-    background-color: #0066cc;
-    color: white;
-}
 
 .body-Case{
     display: flex;
-    width: 100%;
+    width: 100vw;
     justify-content: center;
     align-items: center;
     padding: 30px;
-    overflow: scroll;
+   
+    background-color: #e5e5e5;
 }

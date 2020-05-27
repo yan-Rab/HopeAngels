@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import Ongs from './ongs/Ongs';
-import logoMarca from '../../../images/logomarca.png';
 import Logout from '../../Logout';
 import { Link } from 'react-router-dom';
 import { DebounceInput} from 'react-debounce-input';
 import api from '../../../services/api';
+
+
+
+import logoMarca from '../../../images/logomarca.png';
 import search from '../../../images/search.png';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./styles.css";
 
 export default class OngsMaster extends Component {
@@ -21,9 +26,15 @@ export default class OngsMaster extends Component {
 
     searchOngs = async() => {
         const { searchOngs } = this.state;
-        const response = await api.post('/searchOng', {value: searchOngs});
+        try{
+            const response = await api.post('/searchOng', {value: searchOngs});
+            return this.setState({ongs: response.data.ongs});
         
-        this.setState({ongs: response.data.ongs});
+        }catch(error){
+            return error
+        }
+        
+        
     }
 
     render(){
@@ -31,13 +42,13 @@ export default class OngsMaster extends Component {
             <div>
                  <div className = "header-ongs">
         
-                    <img src = {logoMarca} style = {{width:"220px",height:"140px"}} alt = "logomarca do site"/>
+                    <img src = {logoMarca} style = {{maxWidth:"220px",maxHeight:"140px"}} alt = "logomarca do site"/>
                 
                     <div className = "search-ongs">
                         
                         <DebounceInput type = "text" debounceTimeout = {800} onChange = {this.getSearch.bind(this)} placeholder = "Pesquise por Ongs" />
                         <button className = "but-search" style = {{background: "none"}} onClick = {this.searchOngs.bind(this)}>
-                            <img src = {search} title = "Buscar" style = {{marginLeft: "15px",width: "60px", height: "60px"}} />
+                            <img src = {search} title = "Buscar" style = {{marginLeft: "15px",width: "50px", height: "50px"}} alt = "Botão de busca" />
                         </button>
                     </div>
 
@@ -46,11 +57,14 @@ export default class OngsMaster extends Component {
                         <Logout />
                     </div>
 
+                 
                 </div>
 
                 <div className = "body-Ongs">
                 <Ongs ongs = {this.state.ongs} />
                 </div>
+              
+                <ToastContainer className = "toast-container" />
             </div>
         )
     }
