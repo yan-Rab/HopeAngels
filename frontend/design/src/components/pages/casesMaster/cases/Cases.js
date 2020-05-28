@@ -27,6 +27,7 @@ export default class Cases extends Component {
         const {id} = this.props.idOng;
         const response = await api.post(`/searchCasesById`, {ong: id});
         this.setState({casesInfors: response.data.docs});
+    
     }
  
 

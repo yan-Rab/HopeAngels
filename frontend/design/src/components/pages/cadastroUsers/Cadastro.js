@@ -5,16 +5,13 @@ import "./styles.css";
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
-export default class Main extends React.Component {
-    render(){
-        return(
-          
-            <div className = 'body-main'>
-                <Title />
-                <Form />
-                <ToastContainer className = "toast-container" />
-            </div>
-            
-        );
-    }
-}
+
+const CadastroUsers = () => (
+    <div className = 'body-main'>
+        <Title />
+        <Form />
+        <ToastContainer className = "toast-container" />
+    </div>
+)
+
+export default CadastroUsers;

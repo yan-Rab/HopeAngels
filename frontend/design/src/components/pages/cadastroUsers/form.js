@@ -39,10 +39,7 @@ export default class Form extends React.Component {
         });
 
             localStorage.setItem("authenticationUsers", response.data.token);
-            
-            setTimeout(() => {
-                window.location.reload();
-            }, 1500)
+            localStorage.setItem("userId", response.data.users._id)
         
         }catch(error){
 
@@ -73,8 +70,8 @@ export default class Form extends React.Component {
                     
                         <DebounceInput type = "text" debounceTimeout = {800} onChange = {this.getName.bind(this)} placeholder = "Nome completo" required/>
                         <DebounceInput type = "email" debounceTimeout = {800} onChange = {this.getEmail.bind(this)} placeholder = "E-mail" required autoFocus />
-                        <DebounceInput type = "password" debounceTimeout = {800} placeholder = " Crie sua senha" onChange = {this.getCreatePassword.bind(this)} required />
-                        <DebounceInput type = "password" debounceTimeout = {800} placeholder = " Confirme sua senha" onChange = {this.getConfirmPassword.bind(this)} required/>
+                        <DebounceInput type = "password" debounceTimeout = {800} placeholder = " Crie sua senha" onChange = {this.getCreatePassword.bind(this)} required minLength = {4}/>
+                        <DebounceInput type = "password" debounceTimeout = {800} placeholder = " Confirme sua senha" onChange = {this.getConfirmPassword.bind(this)} required minLength = {4}/>
                         
                         <button type = "submit" disabled = {this.disabledButton()} >Cadastrar</button>
                         

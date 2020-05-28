@@ -22,11 +22,12 @@ export default class casesMaster extends Component {
         this.setState({searchCase: event.target.value})
     )
 
-    loadCases = async() => {
+    loadCasesBySearch = async() => {
         const { searchCase } = this.state;
+        const { id } = this.props.match.params;
         try{
 
-        const response = await api.post("/searchCasesEspecify", {value: searchCase});
+        const response = await api.post("/searchCasesEspecify", {value: searchCase, idOng: id});
         this.setState({cases: response.data.cases});
 
         }catch(error){
@@ -42,7 +43,7 @@ export default class casesMaster extends Component {
                     <img src = {logoMarca} style = {{maxWidth:"220px",maxHeight:"140px"}} alt = "logomarca do site" />
                     <div className = "search-cases">
                         <DebounceInput type = "text" onChange = {this.getSearchCases.bind(this)} debounceTimeout = {800} placeholder = "Pesquise por casos" />
-                        <button className = "but-search-cases" onClick = {this.loadCases.bind(this)}>
+                        <button className = "but-search-cases" onClick = {this.loadCasesBySearch.bind(this)}>
                             <img src = {search} alt = "Botão de Busca" style = {{width: "50px", height: "50px"}} />
                         </button>
                     </div>

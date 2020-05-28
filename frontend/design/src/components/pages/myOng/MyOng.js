@@ -1,5 +1,9 @@
 import React from 'react';
-
-const MyOng = () => <h1>Hello My Ong</h1>
+import LogoutOng from '../../LogoutOng';
+const MyOng = () => (
+    <div>
+        <LogoutOng />
+    </div>
+)
 
 export default MyOng;

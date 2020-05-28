@@ -1,5 +1,5 @@
 export const authOngs = () => {
-    if(localStorage.getItem('authenticationOngs') !== null){
+    if(localStorage.getItem('tokenOng') !== null){
         return true;
     }else{
         return false

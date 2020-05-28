@@ -78,7 +78,7 @@
     display: flex;
     flex-wrap: wrap;
     padding: 30px;
-    width: 100%;
+    width: 100vw;
     justify-content: center;
     align-items: center;
     background-color: #e5e5e5;

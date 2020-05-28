@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => (
     <div className = 'main-header'>
-        <img src = {logoMarca} style = {{marginTop: "20px",marginBottom:"20px",maxWidth:"260px",maxHeight:"160px"}} alt = "logomarca do site"/>
+        <img src = {logoMarca} style = {{marginTop: "20px",marginBottom:"20px",maxWidth:"230px",maxHeight:"130px"}} alt = "logomarca do site"/>
         <div className = 'cadastro-entry'>
         <Link to = "/CadastroUsers" className = "link-cadastro">Cadastre-se agora</Link>
         <Link to = "/LoginUsers" className = "link-entry">Entrar</Link>

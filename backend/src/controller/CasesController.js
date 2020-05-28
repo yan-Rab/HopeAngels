@@ -12,7 +12,7 @@ module.exports = {
     async searchCasesById(request, response){
         const { page = 1} = request.body;
         const { ong } = request.body;
-        const cases = await Cases.paginate({ong: ong}, {page,limit: 6});
+        const cases = await Cases.paginate({ong}, {page,limit: 6});
         return response.json(cases);
     },
 
@@ -27,9 +27,9 @@ module.exports = {
     },
 
     async searchCasesEspecify(request,response){
-        const { value } = request.body;
+        const { value , idOng } = request.body;
         const regex = new RegExp(`${value}[0-9]?`, 'i');
-        const cases = await Cases.find({title: { $regex: regex}})
+        const cases = await Cases.find({title: { $regex: regex}, ong: idOng })
 
         if(cases.length === 0){
             return response.status(400).json({error: "Case not found!"})

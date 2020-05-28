@@ -60,7 +60,7 @@ module.exports = {
 
         ongs.password = undefined;
 
-        return response.json({ongs,token: generateToken({id: ongs.id})});
+        return response.json({ongs,token: generateToken({id: ongs.id}), auth: true});
 
     },
 

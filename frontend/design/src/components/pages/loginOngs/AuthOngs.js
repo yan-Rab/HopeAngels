@@ -21,10 +21,17 @@ export default class AuthOngs extends Component{
         event.preventDefault();
         const { email } = this.state;
         const { password } = this.state;
-        const response = await api.post("/authenticationOngs", { email, password });
-        if(response){
+        const proprietor = localStorage.getItem('userId');
+        try{
+            const response = await api.post("/authenticationOngs", { email,password,proprietor });
             localStorage.setItem('tokenOng', response.data.token);
-            window.location.reload();
+            localStorage.setItem('idOng', response.data.ongs._id);
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500);
+            
+        }catch(error){
+            return error;
         }
         
     }
@@ -32,10 +39,10 @@ export default class AuthOngs extends Component{
     render(){
         return(
                 
-                <form>
+                <form onSubmit = {this.authOngs}>
                     <input type = "email" onChange = {this.getEmail.bind(this)} placeholder = "E-mail" required autoFocus />
-                    <input type = "password" onChange = {this.getPassword.bind(this)} placeholder = "Senha" required />
-                    <button onClick = {this.authOngs.bind(this)}>Logar</button>
+                    <input type = "password" onChange = {this.getPassword.bind(this)} placeholder = "Senha" required minLength = {4}/>
+                    <button>Logar</button>
                     <p>Não cadastrou sua Ong? <Link to = "/registerOngs" >Cadastre aqui</Link></p>
                 </form>
         )

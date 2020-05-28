@@ -11,7 +11,7 @@ import MyOng from './components/pages/myOng/MyOng';
 
 import { PrivateRouteMaster, PrivateRouteLogin, 
          PrivateRouteMasterCases, PrivateRouteRegisterOngs,
-         PrivateRouteRegisterUsers, PrivateRouteLoginOngs
+         PrivateRouteLoginOngs, PrivateRouteMyOng,
         } from './auth/PrivateRoutes';
 
 import RegisterOngs from './components/pages/registerOngs/RegisterOngs';
@@ -20,13 +20,13 @@ const Routes = () => (
     <BrowserRouter>
         <Switch>
             <Route exact path = "/" component = {Main}/>
-            <PrivateRouteRegisterUsers exact path = "/CadastroUsers" component = {CadastroUsers}/>
+            <Route exact path = "/CadastroUsers" component = {CadastroUsers}/>
             <PrivateRouteLogin exact path = "/LoginUsers" component = {Login} />
             <PrivateRouteMaster exact path = "/router-app-ongs" component = {OngsMaster} />
             <PrivateRouteMasterCases path = "/router-app-cases/:id" component = {CasesMaster} />
             <PrivateRouteRegisterOngs path = "/registerOngs" component = {RegisterOngs} />
             <PrivateRouteLoginOngs path = '/LoginOngs' component = {LoginOngs} />
-            <Route path = '/myOng' component = {MyOng} />
+            <PrivateRouteMyOng path = '/myOng' component = {MyOng} />
         </Switch>
     </BrowserRouter>
 )
