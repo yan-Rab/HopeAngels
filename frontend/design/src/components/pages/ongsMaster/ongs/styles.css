@@ -10,16 +10,17 @@
 
 .OngComponent{
     margin: 20px 20px 20px 10px;
-    display: block;
     flex-wrap: wrap;
-    width: 38%;
+    flex: 1;
     min-width: 280px;
-    background-color: #f3f3f3;
+    max-width: 450px;
+    background-color: rgba(30, 26, 46, 0.7);
+    background-size: cover;
     padding: 30px;
-    border: solid 1px #cccccc;
+    color: white;
     border-radius: 50px;
-    
     line-height: 35px;
+ 
 }
 
 .link-conhecer{
@@ -28,25 +29,22 @@
     align-items: center;
     text-decoration: none;
     height: 55px;
-    background-color: #fbfbfb ;
-    color: #0066cc;
+    background-color:  #6699ff;
+    color: white;
     font-weight: bold;
     margin-top: 25px;
     border-radius: 10px;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     transition: all 0.4s;
-    border: solid 1px #0066cc;
+   
 }
 
-.link-conhecer:hover{
-    background-color: #0066cc;
-    color: white;
-}
+
 
 .OngComponent strong {
     font-size: 18px;
-    color: #003366;
+    color: white;
     font-family: cursive;
 }
 

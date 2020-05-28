@@ -13,7 +13,8 @@ function generateToken(params = {}){
 
 module.exports = {
     async searchOngs(request,response){
-        const ongs = await Ongs.paginate();
+        const { page = 1 } = request.query; 
+        const ongs = await Ongs.paginate({}, {page, limit: 4});
         return response.json({ongs});
     },
 
@@ -64,7 +65,7 @@ module.exports = {
 
     },
 
-    async searchOngEspecific(request, response){
+    async searchOngSpecific(request, response){
         const { value } = request.body;
         const regex = new RegExp(`${value}[0-9]?`,'i');
         const ongs = await Ongs.find({title: {$regex: regex}});

@@ -26,7 +26,7 @@ module.exports = {
         return response.send("Caso deletado!");
     },
 
-    async searchCasesEspecify(request,response){
+    async searchCasesSpecific(request,response){
         const { value , idOng } = request.body;
         const regex = new RegExp(`${value}[0-9]?`, 'i');
         const cases = await Cases.find({title: { $regex: regex}, ong: idOng })

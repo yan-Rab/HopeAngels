@@ -3,7 +3,7 @@ display: flex;
 flex-wrap: wrap;
 width: 100vw;
 padding: 30px;
-background-color: #99ccff;
+
 justify-content: space-around;
 align-items: center;
 
@@ -44,11 +44,13 @@ align-items: center;
 
 
 .body-Case{
+    background-image: url("../../../images/template-case.png");
+    background-size: cover;
     display: flex;
     width: 100vw;
     justify-content: center;
     align-items: center;
     padding: 30px;
-   
+    height: 100vh;
     background-color: #e5e5e5;
 }

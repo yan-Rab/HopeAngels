@@ -5,8 +5,6 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    background-color: #99ccff;
-  
 }
 
 .search-ongs{
@@ -49,8 +47,6 @@
     
 }
 
-
-
 .header-ongs .componentButtons .butcadOng{
     width: 130px;
     margin-bottom: 20px;
@@ -75,11 +71,29 @@
 }
 
 .body-Ongs{
+    background-image: url("../../../images/template.jpg");
+    background-size: cover;
     display: flex;
     flex-wrap: wrap;
     padding: 30px;
     width: 100vw;
+    
     justify-content: center;
     align-items: center;
-    background-color: #e5e5e5;
+}
+
+.body-Ongs .but-paginate{
+        width: 120px;
+        height: 45px;
+        text-align: center;
+        background-color: #cc3366;
+        border-radius: 8px;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        
+}
+
+.body-Ongs .but-paginate[disabled]{
+   background-color: #ff9999;
 }

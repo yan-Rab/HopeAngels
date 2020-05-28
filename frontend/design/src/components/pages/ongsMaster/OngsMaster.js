@@ -18,11 +18,27 @@ export default class OngsMaster extends Component {
     state = {
         searchOngs: "",
         ongs: [],
+        ongsInfo: {},
+        page: 1,
+        
     }
 
     getSearch = (event) => (
         this.setState({searchOngs: event.target.value})
     )
+
+    componentDidMount(){
+        this.loadOngs();
+    }
+
+    loadOngs = async(page = 1) => {
+        const token = localStorage.getItem("authenticationUsers");
+        const response = await api.get(`/searchOngs?page=${page}`, {token});
+        const { docs, ...ongsInfo } = response.data.ongs;
+        this.setState({ongs: docs, ongsInfo, page});
+        
+        
+    }
 
     searchOngs = async() => {
         const { searchOngs } = this.state;
@@ -35,6 +51,45 @@ export default class OngsMaster extends Component {
         }
         
         
+    }
+
+    prevPage = () => {
+        const { page } = this.state;
+        if(page === 1){
+            return
+        }else{
+            const pageNumber = page - 1;
+            this.loadOngs(pageNumber);
+        }
+
+    }
+
+    nextPage = () => {
+       const { page , ongsInfo } = this.state;
+       if(page === ongsInfo.pages){
+           return
+       }else{
+           const pageNumber = page + 1;
+           this.loadOngs(pageNumber);
+       }
+    }
+
+    disabledPrevButton = () => {
+        const { page } = this.state;
+        if(page === 1) {
+            return true
+        }else{
+            return false
+        }
+    }
+
+    disabledNextButton = () => {
+       const { page, ongsInfo } = this.state;
+       if(page === ongsInfo.pages){
+           return true
+       }else{
+           return false
+       }
     }
 
     render(){
@@ -61,7 +116,12 @@ export default class OngsMaster extends Component {
                 </div>
 
                 <div className = "body-Ongs">
-                <Ongs ongs = {this.state.ongs} />
+                    
+                        <button className = "but-paginate" onClick = {this.prevPage.bind(this)} disabled = {this.disabledPrevButton()}>Anterior</button>
+                    
+                    <Ongs ongs = {this.state.ongs} />
+                    <button className = "but-paginate" onClick = {this.nextPage.bind(this)} disabled = {this.disabledNextButton()}>Próximo</button>
+
                 </div>
               
                 <ToastContainer className = "toast-container" />

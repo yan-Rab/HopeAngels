@@ -18,13 +18,13 @@ routes.post('/createCategories',CategoriesController.createCategories);
 routes.get('/searchOngs',authMiddleware, OngsController.searchOngs);
 routes.post('/createOngs',authMiddleware, OngsController.createOngs);
 routes.delete('/destroyOngs/:id', OngsController.destroyOngs);
-routes.post('/authenticationOngs',OngsController.authenticationOngs);
-routes.post('/searchOng', authMiddleware,OngsController.searchOngEspecific);
+routes.post('/authenticationOngs',authMiddleware,OngsController.authenticationOngs);
+routes.post('/searchOng', authMiddleware,OngsController.searchOngSpecific);
 
 routes.get('/searchCases', authMiddleware, CasesController.searchCases);
 routes.post('/searchCasesById', CasesController.searchCasesById);
 routes.post('/createCases',authMiddleware, CasesController.createCases);
 routes.delete('/destroyCases/:id', CasesController.destroyCases);
-routes.post('/searchCasesEspecify', CasesController.searchCasesEspecify);
+routes.post('/searchCasesSpecific', CasesController.searchCasesSpecific);
 
 module.exports = routes;

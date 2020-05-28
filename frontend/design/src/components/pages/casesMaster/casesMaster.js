@@ -27,7 +27,7 @@ export default class casesMaster extends Component {
         const { id } = this.props.match.params;
         try{
 
-        const response = await api.post("/searchCasesEspecify", {value: searchCase, idOng: id});
+        const response = await api.post("/searchCasesSpecific", {value: searchCase, idOng: id});
         this.setState({cases: response.data.cases});
 
         }catch(error){
