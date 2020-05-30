@@ -2,7 +2,29 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { authUsers } from './AuthUsers';
 import { authOngs } from './AuthOngs';
-export const PrivateRouteMaster = ({component: Component, ...rest}) => (
+
+
+export const PrivateRouteMain = ({component: Component, ...rest}) => (
+    <Route {...rest} render = {props => (
+        authUsers() ? (
+            <Redirect to = {{pathname: "/router-app-ongs"}} />
+        ) : (
+            <Component {...props} />
+        )
+    )} />
+)
+
+export const PrivateRouteRegisterUsers = ({component: Component, ...rest}) => (
+    <Route {...rest} render = {props => (
+        authUsers() ? (
+            <Redirect to = {{pathname:"/router-app-ongs", state: {from: props.location}}} />
+        ) : (
+            <Component {...props} />
+        )
+    )} />
+)
+
+export const PrivateRouteMasterOngs = ({component: Component, ...rest}) => (
     <Route {...rest} render = {props => (
         authUsers() ? (
             <Component {...props} />

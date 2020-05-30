@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: 0;
     border:0;
+    
 }
+
 
 .toast-container{
     padding: 20px;
@@ -46,15 +48,25 @@
     border-radius: 4px;
 }
 
+.toast-container .toast-disconnect{
+    
+    color: white;
+    background-color: #333333;
+    font-size: 17px;
+    padding: 5px;
+    border-radius: 4px;
+}
+
 .logout-but{
     width: 130px ;
     height: 48px;
     color: #0066cc;
     font-weight: bold;
     border: solid 2px #0066cc;
-    border-radius: 4px;
+    border-radius: 8px;
     transition: all 0.4s;
     font-size: 18px;
+    
 }
 
 .logout-but:hover{

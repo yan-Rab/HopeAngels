@@ -27,3 +27,12 @@ export const toastSucess = (text, icon) => (
         draggable: true,
     })
 )
+
+export const toastDisconnect = (text, icon) => (
+    toast.dark(responseText(text,icon), {
+        position:"bottom-center",
+        pauseOnHover: false,
+        autoClose: false,
+        className: "toast-disconnect"
+    })
+)

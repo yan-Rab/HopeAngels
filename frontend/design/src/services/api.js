@@ -2,7 +2,9 @@ import axios from 'axios';
 
 import iconError from '../images/error.png';
 import iconSuccess from '../images/try.png';
-import { toastError, toastSucess } from '../toasts/Toasts';
+import iconDisconnect from '../images/disconnect.png';
+import { toastError, toastSucess, toastDisconnect } from '../toasts/Toasts';
+
 
 const api = axios.create({baseURL: "http://localhost:3003/api"});
 
@@ -41,6 +43,17 @@ api.interceptors.response.use(
 
         if(err.response.data.searchError){
             return toastError(err.response.data.searchError, iconError)
+        }
+
+        if(err.response.data.tokenError){
+             localStorage.removeItem("authenticationUsers");
+             localStorage.removeItem("userId");
+             toastDisconnect("Você foi desconectado", iconDisconnect)
+             setTimeout(() => {
+                  return window.location.reload();
+             },2500)
+             
+             
         }
    }
 )

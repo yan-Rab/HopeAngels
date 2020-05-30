@@ -1,26 +1,27 @@
 .Ongs{
     display: flex;
-    max-width: 1100px;
+    max-width: 900px;
     justify-content: space-between;
     align-items: center;
     padding: 30px;
     align-items: center;
     flex-wrap: wrap;
+    
 }
 
 .OngComponent{
     margin: 20px 20px 20px 10px;
     flex-wrap: wrap;
-    flex: 1;
-    min-width: 280px;
-    max-width: 450px;
-    background-color: rgba(30, 26, 46, 0.7);
+    flex: 2;
+    min-width: 220px;
+    max-width: 420px;
+    background-color: rgba(10, 0, 50, 0.8);
     background-size: cover;
     padding: 30px;
     color: white;
     border-radius: 50px;
     line-height: 35px;
- 
+  
 }
 
 .link-conhecer{
@@ -43,9 +44,9 @@
 
 
 .OngComponent strong {
-    font-size: 18px;
-    color: white;
-    font-family: cursive;
+    font-size: 19px;
+    color: #ccccff;
+    font-family: cursive ;
 }
 
 .OngComponent p {

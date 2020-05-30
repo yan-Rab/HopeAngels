@@ -15,6 +15,7 @@ module.exports = {
     async searchOngs(request,response){
         const { page = 1 } = request.query; 
         const ongs = await Ongs.paginate({}, {page, limit: 4});
+        
         return response.json({ongs});
     },
 

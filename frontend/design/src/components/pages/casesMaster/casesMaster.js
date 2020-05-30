@@ -22,6 +22,17 @@ export default class casesMaster extends Component {
         this.setState({searchCase: event.target.value})
     )
 
+    componentDidMount(){
+        this.loadCases();
+    }
+    
+    loadCases = async() => {
+        const {id} = this.props.match.params;
+        const response = await api.post(`/searchCasesById`, {ong: id});
+        this.setState({cases: response.data.docs});
+    
+    }
+
     loadCasesBySearch = async() => {
         const { searchCase } = this.state;
         const { id } = this.props.match.params;
@@ -38,9 +49,9 @@ export default class casesMaster extends Component {
     render(){
         
         return(
-            <div>
-                 <header className = "header-Cases">
-                    <img src = {logoMarca} style = {{maxWidth:"220px",maxHeight:"140px"}} alt = "logomarca do site" />
+            <div className = "container-master-case">
+                 <div className = "header-Cases">
+                    <img src = {logoMarca} style = {{maxWidth:"220px",maxHeight:"140px",marginTop:'10px'}} alt = "logomarca do site" />
                     <div className = "search-cases">
                         <DebounceInput type = "text" onChange = {this.getSearchCases.bind(this)} debounceTimeout = {800} placeholder = "Pesquise por casos" />
                         <button className = "but-search-cases" onClick = {this.loadCasesBySearch.bind(this)}>
@@ -48,10 +59,10 @@ export default class casesMaster extends Component {
                         </button>
                     </div>
                     <Logout />
-                </header>
+                </div>
 
                 <div className = "body-Case">
-                <Cases idOng = {this.props.match.params} search = {this.state.cases} />
+                <Cases search = {this.state.cases} />
                 </div>
                 <ToastContainer className = 'toast-container'/>
             </div>

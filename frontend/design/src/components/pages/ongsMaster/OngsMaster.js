@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 import { DebounceInput} from 'react-debounce-input';
 import api from '../../../services/api';
 
-
-
 import logoMarca from '../../../images/logomarca.png';
 import search from '../../../images/search.png';
 import { ToastContainer } from 'react-toastify';
@@ -33,11 +31,14 @@ export default class OngsMaster extends Component {
 
     loadOngs = async(page = 1) => {
         const token = localStorage.getItem("authenticationUsers");
-        const response = await api.get(`/searchOngs?page=${page}`, {token});
-        const { docs, ...ongsInfo } = response.data.ongs;
-        this.setState({ongs: docs, ongsInfo, page});
-        
-        
+        try{
+            const response = await api.get(`/searchOngs?page=${page}`, {token});
+            const { docs, ...ongsInfo } = response.data.ongs;
+            
+            this.setState({ongs: docs, ongsInfo, page});
+        }catch(error){
+            return error;
+        }
     }
 
     searchOngs = async() => {
@@ -48,9 +49,7 @@ export default class OngsMaster extends Component {
         
         }catch(error){
             return error
-        }
-        
-        
+        }  
     }
 
     prevPage = () => {
@@ -94,7 +93,7 @@ export default class OngsMaster extends Component {
 
     render(){
         return(
-            <div>
+            <div className = "container-main">
                  <div className = "header-ongs">
         
                     <img src = {logoMarca} style = {{maxWidth:"220px",maxHeight:"140px"}} alt = "logomarca do site"/>
@@ -114,16 +113,15 @@ export default class OngsMaster extends Component {
 
                  
                 </div>
-
+    
                 <div className = "body-Ongs">
-                    
-                        <button className = "but-paginate" onClick = {this.prevPage.bind(this)} disabled = {this.disabledPrevButton()}>Anterior</button>
-                    
                     <Ongs ongs = {this.state.ongs} />
-                    <button className = "but-paginate" onClick = {this.nextPage.bind(this)} disabled = {this.disabledNextButton()}>Próximo</button>
-
                 </div>
-              
+                
+                <div className = "buttons-paginate">
+                    <button className = "but-paginate" onClick = {this.prevPage.bind(this)} disabled = {this.disabledPrevButton()}>Anterior</button>
+                    <button className = "but-paginate" onClick = {this.nextPage.bind(this)} disabled = {this.disabledNextButton()}>Próximo</button>
+                </div>
                 <ToastContainer className = "toast-container" />
             </div>
         )

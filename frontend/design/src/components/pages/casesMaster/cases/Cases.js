@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import api from '../../../../services/api';
 import CaseComponent from './CaseComponent';
 
 import './styles.css';
@@ -13,23 +12,12 @@ export default class Cases extends Component {
         }
     }
     
-     componentDidMount(){
-       this.loadCases();
-    }
 
     componentDidUpdate(prevProps){
         if(this.props.search !== prevProps.search){
             this.setState({casesInfors: this.props.search});
         }
     }
-
-    loadCases = async() => {
-        const {id} = this.props.idOng;
-        const response = await api.post(`/searchCasesById`, {ong: id});
-        this.setState({casesInfors: response.data.docs});
-    
-    }
- 
 
     render(){
         const { casesInfors } = this.state;

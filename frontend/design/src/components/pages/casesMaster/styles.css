@@ -1,9 +1,14 @@
-.header-Cases{
+.container-master-case{
+    background-image: url("../../../images/template-master-cases.gif");
+    background-size: cover;
+    width: 100vw;
+  
+}
+
+.container-master-case .header-Cases{
 display: flex;
 flex-wrap: wrap;
 width: 100vw;
-padding: 30px;
-
 justify-content: space-around;
 align-items: center;
 
@@ -11,7 +16,7 @@ align-items: center;
 
 .header-Cases .search-cases {
     display: flex;
-    padding: 20px;
+    padding: 30px;
     width: 540px;
     justify-content: space-between;
     align-items: center;
@@ -32,9 +37,9 @@ align-items: center;
     width: 100%;
     display: flex;
     min-width: 150px;
-    height: 40px;
+    height: 35px;
     margin-left: 30px;
-    border: solid 2px #6699cc ;
+    box-shadow: 2px 2px 2px#333333;
     border-radius: 4px;
     font-size: 18px;
     padding: 5px;
@@ -43,14 +48,12 @@ align-items: center;
 
 
 
-.body-Case{
-    background-image: url("../../../images/template-case.png");
-    background-size: cover;
+ .body-Case{
     display: flex;
     width: 100vw;
     justify-content: center;
     align-items: center;
-    padding: 30px;
-    height: 100vh;
-    background-color: #e5e5e5;
+    
+   
+   
 }

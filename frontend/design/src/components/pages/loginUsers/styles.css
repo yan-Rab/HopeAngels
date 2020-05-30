@@ -1,7 +1,4 @@
-body{
-    background-color: #f4f4f4;
-    overflow: scroll;
-}
+
 
 .body-login{
     width: 100%;
@@ -11,13 +8,16 @@ body{
     overflow: scroll;
     justify-content: center;
     align-items: center;
-    background-color: white;
+   
     
 }
 .body-login .logo-form{
+    background-color: white;
+    border-radius: 32px;
+    
     display: flex;
     max-width: 360px;
-    margin-top: 80px;
+    margin-top: 40px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
