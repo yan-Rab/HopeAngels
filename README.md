@@ -2,7 +2,7 @@
 
 <img src = "./frontend/design/src/images/logomarca.png" width = "200px" height = "150px"/>
 
-## Projeto sendo realizado utilizando <img src = "frontend/design/src/images/logomarca.png" /> Node.js, React.js e MongoDB com mongoose como ORM.
+## Projeto sendo realizado utilizando <img src = "frontend/design/src/images/node.png" /> Node.js, <img src = "frontend/design/src/images/react.png" /> React.js e MongoDB com mongoose como ORM.
 
 -Nesta aplicação, o usuários poderão se cadastrar e doar para Ongs já cadastradas ou criar sua própria Ong e receber doações.
 
