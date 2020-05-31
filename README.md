@@ -4,7 +4,7 @@
 
 ## Projeto sendo realizado utilizando <img src = "frontend/design/src/images/nodejs.png" /> Node.js, <img src = "frontend/design/src/images/react.png" /> React.js e MongoDB com mongoose como ORM.
 
-<img src = "./frontend/design/src/images/unidos.png" width = "400px" height = "250px"/>
+<img src = "./frontend/design/src/images/unidos.png" width = "400px" height = "350px"/>
 
 -Nesta aplicação, o usuários poderão se cadastrar e doar para Ongs já cadastradas ou criar sua própria Ong e receber doações.
 
