@@ -15,6 +15,8 @@ export default class casesMaster extends Component {
         this.state = {
             searchCase: "",
             cases: [],
+            casesInfo: {},
+            page: 1,
         }
     }
 
@@ -26,11 +28,53 @@ export default class casesMaster extends Component {
         this.loadCases();
     }
     
-    loadCases = async() => {
+    loadCases = async(page = 1) => {
         const {id} = this.props.match.params;
-        const response = await api.post(`/searchCasesById`, {ong: id});
-        this.setState({cases: response.data.docs});
-    
+        try{
+            const response = await api.post(`/searchCasesById?page=${page}`, {ong: id});
+            const {docs, ...casesInfo } = response.data;
+            this.setState({cases: docs, casesInfo, page});
+        }catch(error){
+            return error;
+        }
+    }
+
+    prevPage = () => {
+        const { page } = this.state;
+        if(page === 1){ 
+            return 
+        }else{
+            const pageNumber = page - 1;
+            return this.loadCases(pageNumber)
+        }
+    }
+
+    nextPage = () => {
+        const { page, casesInfo } = this.state;
+        if(page === casesInfo.pages){
+            return
+        }else{
+            const pageNumber = page + 1;
+            return this.loadCases(pageNumber)
+        }
+    }
+
+    disableButtonPrevPage = () => {
+        const { page } = this.state;
+        if(page === 1) {
+            return true
+        }else{
+            return false
+        }
+    }
+
+    disableButtonNextPage = () => {
+        const { page, casesInfo } = this.state;
+        if(page === casesInfo.pages){
+            return true
+        }else{
+            return false
+        }
     }
 
     loadCasesBySearch = async() => {
@@ -63,6 +107,12 @@ export default class casesMaster extends Component {
 
                 <div className = "body-Case">
                 <Cases search = {this.state.cases} />
+                </div>
+
+                <div className = "buttons-paginate">
+                    <button className = "but-paginate" onClick = {this.prevPage.bind(this)} disabled = {this.disableButtonPrevPage()}>Anterior</button>
+                    <button className = "but-paginate" onClick = {this.nextPage.bind(this)} disabled = {this.disableButtonNextPage()}>Próximo</button>
+                    
                 </div>
                 <ToastContainer className = 'toast-container'/>
             </div>

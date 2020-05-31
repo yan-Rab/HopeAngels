@@ -116,7 +116,7 @@ export default class Form extends Component {
                     Registrar
                 </button>
 
-                <p>Sua Ong já está registrada? <Link to = "/LoginOngs" >Entre</Link></p>
+                <p>Já registrou sua Ong? <Link to = "/LoginOngs" >Entre</Link></p>
                 </form>
             </div>
         )

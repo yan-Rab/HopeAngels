@@ -2,7 +2,7 @@
     background-image: url("../../../images/template-master-cases.gif");
     background-size: cover;
     width: 100vw;
-  
+    min-height: 100vh;
 }
 
 .container-master-case .header-Cases{

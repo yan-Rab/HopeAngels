@@ -96,7 +96,7 @@ export default class OngsMaster extends Component {
             <div className = "container-main">
                  <div className = "header-ongs">
         
-                    <img src = {logoMarca} style = {{maxWidth:"220px",maxHeight:"140px"}} alt = "logomarca do site"/>
+                    <img src = {logoMarca} style = {{maxWidth:"220px",maxHeight:"140px",marginTop:'10px'}} alt = "logomarca do site"/>
                 
                     <div className = "search-ongs">
                         
@@ -107,7 +107,7 @@ export default class OngsMaster extends Component {
                     </div>
 
                     <div className = "componentButtons">
-                        <Link to = "/LoginOngs" className = "butcadOng">Minha Ong</Link>
+                        <Link to = "/RegisterOngs" className = "butcadOng">Minha Ong</Link>
                         <Logout />
                     </div>
 

@@ -6,11 +6,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const RegisterOngs = () => (
     
-    <div className = "body-register">
-        <Title />
-        <Form />
-        <ToastContainer className = "toast-container" />
-    </div>
-
+        <div className = "body-register">
+            <Title />
+            <Form />
+            <ToastContainer className = "toast-container" />
+        </div>
+ 
 )
 export default RegisterOngs;
